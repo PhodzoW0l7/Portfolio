@@ -3,76 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phodzo Nagana</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Phodzo Nagana's Portfolio</title>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Phodzo Nagana</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
+    <!---Header-->
+    <header class="header">
+      <a href="#" class="logo">Portfolio</a>
+      <i class="fa-thin fa-bars" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!---Header closes-->
+
+    <!---Home section-->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hi,</h3>
+        <h3>Phodzo Nagana</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+          temporibus iste voluptatem nam fugit ad nihil a sunt unde ratione sit
+          repellat eveniet sequi quam assumenda esse similique, aliquid tempora?
+        </p>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <a href="#" class="btn">Download CV</a>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Phodzo Nagana</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact Me</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile.png" alt="profile" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hi, I am</p>
-        <h1 class="title">Phodzo Nagana</h1>
-        <p class="section__text__p2">Full Stack Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn__btn-color-2"
-            onclick="window.open('./assets/Phodzo Software Dev CV.pdf')"
-          >
-            Download CV
-          </button>
-          <button
-            class="btn__btn-color-1"
-            onclick="location.href('./#contact')"
-          >
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/icons8-linkedin-64.png"
-            alt="My linkedin profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/phodzo-nagana-7067a1263'"
-          />
-          <img
-            src="./assets/icons8-github-90.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/PhodzoW0l7'"
-          />
-        </div>
+
+      <div class="home-img">
+        <img src="./assets/profile.png" alt="" />
       </div>
     </section>
-    <script src="scripts.js"></script>
+
+    <script src="./javascript/scripts.js"></script>
   </body>
 </html>
