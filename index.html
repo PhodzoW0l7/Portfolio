@@ -11,49 +11,48 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
     <title>Phodzo Nagana's Portfolio</title>
   </head>
   <body>
-    <!---Header-->
-    <header class="header">
-      <a href="#" class="logo">Portfolio</a>
-      <i class="fa-thin fa-bars" id="menu-icon"></i>
-
-      <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <!---Header closes-->
-
-    <!---Home section-->
-    <section class="home" id="home">
-      <div class="home-content">
-        <h3>Hi,</h3>
-        <h3>Phodzo Nagana</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-          temporibus iste voluptatem nam fugit ad nihil a sunt unde ratione sit
-          repellat eveniet sequi quam assumenda esse similique, aliquid tempora?
-        </p>
-        <div class="social-media">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+    <div class="container">
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Phodzo</p>
+          <span>.</span>
         </div>
-        <a href="#" class="btn">Download CV</a>
-      </div>
-
-      <div class="home-img">
-        <img src="./assets/profile.png" alt="" />
-      </div>
-    </section>
-
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="#home" class="nav-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#about" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#projects" class="nav-link">Projects</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn">
+            Download CV<i class="fa-regular fa-file"></i></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="fa-solid fa-bars" onclick="myMenuFuction()"></i>
+        </div>
+      </nav>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./javascript/scripts.js"></script>
   </body>
 </html>
