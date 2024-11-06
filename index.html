@@ -3,76 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phodzo Nagana</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <title>Phodzo Nagana's Portfolio</title>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Phodzo Nagana</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Phodzo Nagana</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+    <div class="container">
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Phodzo</p>
+          <span>.</span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact Me</a></li>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="#home" class="nav-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#about" class="nav-link">About</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#projects" class="nav-link">Projects</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile.png" alt="profile" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hi, I am</p>
-        <h1 class="title">Phodzo Nagana</h1>
-        <p class="section__text__p2">Full Stack Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn__btn-color-2"
-            onclick="window.open('./assets/Phodzo Software Dev CV.pdf')"
-          >
-            Download CV
-          </button>
-          <button
-            class="btn__btn-color-1"
-            onclick="location.href('./#contact')"
-          >
-            Contact Info
+        <div class="nav-button">
+          <button class="btn">
+            Download CV<i class="fa-regular fa-file"></i>
           </button>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/icons8-linkedin-64.png"
-            alt="My linkedin profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/phodzo-nagana-7067a1263'"
-          />
-          <img
-            src="./assets/icons8-github-90.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/PhodzoW0l7'"
-          />
+        <div class="nav-menu-btn">
+          <i class="fa-solid fa-bars" onclick="myMenuFunction()"></i>
         </div>
-      </div>
-    </section>
-    <script src="scripts.js"></script>
+      </nav>
+    </div>
+
+    <main class="wrapper">
+      <section class="featured-box">
+        <div class="featured-text">
+          <div class="featured-text-card">
+            <span>Phodzo Nagana</span>
+          </div>
+          <div class="featured-name">
+            <p><span class="typed-text">Full Stack Developer</span></p>
+          </div>
+          <div class="featured-text-info">
+            <p>
+              Experienced software developer with full stack development of
+              applications from front-end development to software development
+            </p>
+          </div>
+          <div class="featured-text-btn">
+            <button class="btn blue-btn">
+              Email<i class="fa-regular fa-envelope"></i>
+            </button>
+            <button class="btn blue-btn">
+              Download CV<i class="fa-regular fa-file"></i>
+            </button>
+          </div>
+          <div class="social-icons">
+            <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="icon"><i class="fa-brands fa-github"></i></div>
+          </div>
+        </div>
+        <div class="featured-image">
+          <div class="image">
+            <img src="./assets/profile.png" alt="profile" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="scroll-icon-box">
+      <a href="#about" class="scroll-btn">
+        <i class="fa-solid fa-arrow-down"></i>
+        <p>Scroll Down</p>
+      </a>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./javascript/scripts.js"></script>
   </body>
 </html>
