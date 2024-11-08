@@ -54,6 +54,16 @@ nav {
   z-index: 100;
 }
 
+nav.scrolled {
+  background: rgb(38, 135, 226); /* Solid color when scrolled */
+}
+
+nav.scrolled .nav-link,
+nav.scrolled .nav-name,
+nav.scrolled .btn {
+  color: white; /* Change text color to white when scrolled */
+}
+
 .nav-logo {
   position: relative;
 }
@@ -114,7 +124,7 @@ nav {
 }
 
 .btn:hover {
-  background-color: var(--second-color);
+  background-color: var(--third-color);
   color: var(--color-white);
 }
 
@@ -131,7 +141,9 @@ body {
   width: 100%;
   position: relative;
 }
-
+nav.scrolled .btn {
+  background-color: rgb(128, 128, 128); /* Darker color when scrolled */
+}
 .wrapper {
   padding-top: 90px;
   padding-inline: 10vw;
@@ -247,7 +259,7 @@ body {
   height: 50px;
   gap: 5px;
   text-decoration: none;
-  color: var(--text-color-second);
+  color: var(--third-color);
   background: var(--color-white);
   border-radius: 30px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
@@ -255,55 +267,72 @@ body {
 .scroll-btn {
   font-size: 20px;
 }
-
 .section {
   padding-block: 5em;
   text-align: center;
-  margin: -90px;
 }
 
 .row {
   display: flex;
-  justify-content: center; /* Centers the rows */
+  justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }
 
 .col {
   display: flex;
-  flex-direction: column; /* Aligning items vertically */
-  align-items: center; /* Centers items horizontally */
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 800px; /* Increased max-width for more space */
+  max-width: 800px;
 }
-
 .about-info {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px; /* Increased padding for a larger card */
+  padding: 60px;
   background: var(--color-white);
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
   border-radius: 20px;
-  margin-bottom: 20px; /* Adds space between sections */
-  width: 100%; /* Full width to ensure equal sizing */
+  margin-bottom: 20px;
+  width: 140%;
 }
 
-.about-btn-centered {
-  margin: 20px 0;
+.skills-header h3,
+.about-info > h3 {
+  font-size: 24px;
+  color: #777;
 }
 
-.about-btn button {
-  background: var(--first-color);
-  color: var(--color-white);
-  border-radius: 30px;
-  padding: 10px 20px;
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Increased gap for better spacing */
 }
 
-.about-btn button:hover {
-  background: var(--first-color-hover);
+.skills-list span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 15px 20px; /* Adjusted padding for more space */
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transition */
 }
+
+.skills-list span:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.skills-list span img {
+  width: 60px; /* Larger size for logos */
+  height: auto;
+  margin-bottom: 10px;
+}
+
 .top-header {
   text-align: center;
   margin-bottom: 20px;
@@ -314,6 +343,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+.project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between project boxes as needed */
 }
 
 .project-box {
@@ -328,12 +364,11 @@ body {
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
   overflow: hidden;
-  margin: 10px;
+  margin: 20px;
 }
 
 .project-box i {
-  font-size: 40px;
-  color: var(--third-color);
+  font-size: 50px;
   margin-bottom: 10px;
 }
 
@@ -343,8 +378,8 @@ body {
 }
 
 .project-box label {
-  font-size: 14px;
-  color: var(--color-gray);
+  font-size: 15px;
+  color: #777;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -25,3 +25,29 @@ function headerShadow() {
     navHeader.style.lineHeight = "90px";
   }
 }
+
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
