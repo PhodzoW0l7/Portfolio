@@ -140,6 +140,7 @@ body {
 .container {
   width: 100%;
   position: relative;
+  height: 10vh;
 }
 nav.scrolled .btn {
   background-color: rgb(40, 138, 204); /* Darker color when scrolled */
