@@ -51,3 +51,12 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("scrolled");
   }
 });
+
+
+var typingEffect = new Typed(".typed-text", {
+  strings: ["Full Stack Developer", "Cloud Administrator", "Cyber Security Analyst"],
+  loop: true,
+  typeSpeed: 60,
+  backSpeed: 80,
+  backDelay: 2000
+});
