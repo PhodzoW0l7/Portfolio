@@ -52,11 +52,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 var typingEffect = new Typed(".typed-text", {
-  strings: ["Full Stack Developer", "Cloud Administrator", "Cyber Security Analyst"],
+  strings: [
+    "Full Stack Developer",
+    "Cloud Administrator",
+    "Cyber Security Analyst",
+  ],
   loop: true,
   typeSpeed: 60,
   backSpeed: 80,
-  backDelay: 2000
+  backDelay: 2000,
+});
+
+const messageInput = document.querySelector(".message-input");
+messageInput.addEventListener("keydown", (e) => {
+  const userMessage = e.target.value.trim();
+  if (e.key == "Enter" && userMessage) {
+    console.log(userMessage);
+  }
 });

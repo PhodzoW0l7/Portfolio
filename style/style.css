@@ -108,7 +108,6 @@ nav.scrolled .btn {
   font-size: 28px;
   cursor: pointer;
 }
-
 .btn {
   font-weight: 500;
   padding: 12px 20px;
@@ -117,6 +116,9 @@ nav.scrolled .btn {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.4s;
+  text-decoration: none; /* Ensures no underline on the link */
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn > i {
@@ -133,10 +135,10 @@ i {
 }
 
 body {
-  background: var(--body-color) url(../assets/013\ Heavy\ Rain.png) no-repeat center center fixed;
+  background: var(--body-color) url(../assets/013\ Heavy\ Rain.png) no-repeat
+    center center fixed;
   background-size: cover;
 }
-
 
 .container {
   width: 100%;
@@ -207,6 +209,7 @@ nav.scrolled .btn {
   margin-top: 5em;
   gap: 30px;
 }
+
 .icon {
   display: flex;
   justify-content: center;
@@ -217,9 +220,21 @@ nav.scrolled .btn {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
+
+.icon a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: inherit; /* Keeps icon color same as original */
+  text-decoration: none; /* Removes underline from links */
+}
+
 .icon:hover {
   color: var(--third-color);
 }
+
 .featured-image {
   display: flex;
   justify-content: right;
@@ -558,7 +573,7 @@ nav.scrolled .btn {
   rotate: -45deg;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -566,30 +581,28 @@ nav.scrolled .btn {
   row-gap: 30px;
   background: #f8f8f8;
   padding-block: 40px 60px;
-
-
 }
-.top-footer p{
+.top-footer p {
   font-size: 25px;
   font-weight: 600;
 }
-.middle-footer .footer-menu{
+.middle-footer .footer-menu {
   display: flex;
 }
-.footer_menu_list{
+.footer_menu_list {
   list-style: none;
 }
-.footer_menu_list a{
+.footer_menu_list a {
   text-decoration: none;
   color: var(--third-color);
-  font-weight:500 ;
+  font-weight: 500;
   margin-inline: 20px;
 }
-.footer-social-icons{
+.footer-social-icons {
   display: flex;
   gap: 30px;
 }
-.bottom-footer{
+.bottom-footer {
   font-size: 14px;
   margin-top: 10px;
 }
@@ -604,7 +617,7 @@ nav.scrolled .btn {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
 }
 
@@ -678,27 +691,40 @@ nav.scrolled .btn {
 
 .chat-body .message {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  
 }
 
-.chat-body .bot-message .bot-avatar,
-.chat-body .chat-form .chat-controls button {
+.chat-body .bot-message {
+  display: flex;
+  align-items: center;
+}
+
+.chat-body .bot-avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  padding: 6px;
+  fill: #ccc;
+  flex-shrink: 0;
+  margin-right: 10px; /* Add margin to the right of the avatar */
+  background: var(--third-color);
 }
-.chat-form .chat-controls #send-message{
+
+.message-text {
+  display: flex;
+  flex-direction: column;
+}
+.chat-form .chat-controls #send-message {
   color: #fff;
   display: none;
   background: var(--third-color);
-} 
-.chat-form .message-input:valid .chat-controls #send-message{
+}
+
+.chat-form .message-input:valid + .chat-controls #send-message {
   display: block;
 }
 
-.chat-form .chat-controls #send-message:hover{
+.chat-form .chat-controls #send-message:hover {
   background: var(--third-color);
 }
 
@@ -707,7 +733,7 @@ nav.scrolled .btn {
   padding: 6px;
   fill: var(--color-white);
   flex-shrink: 0;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .chat-body .user-message {
@@ -766,7 +792,8 @@ nav.scrolled .btn {
 }
 
 @keyframes dotPulse {
-  0%, 44% {
+  0%,
+  44% {
     transform: translateY(0);
   }
   28% {
@@ -832,9 +859,6 @@ nav.scrolled .btn {
 .chat-form .chat-controls button:hover {
   background: #f1f1f1;
 }
-
-
-
 
 /**media quieris or responsiveness****/
 @media only screen and (max-width: 768px) {
