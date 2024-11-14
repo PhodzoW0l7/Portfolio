@@ -38,3 +38,18 @@ var typingEffect = new Typed(".typed-text", {
   backSpeed: 80,
   backDelay: 2000,
 });
+
+const chatbotIcon = document.getElementById("chatbot-icon");
+const chatbotInterface = document.getElementById("chatbot-interface");
+
+// Function to toggle the chatbot interface
+chatbotIcon.addEventListener("click", function () {
+  if (
+    chatbotInterface.style.display === "none" ||
+    chatbotInterface.style.display === ""
+  ) {
+    chatbotInterface.style.display = "block"; // Show the chatbot
+  } else {
+    chatbotInterface.style.display = "none"; // Hide the chatbot
+  }
+});

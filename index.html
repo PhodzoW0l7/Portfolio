@@ -12,6 +12,14 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css" />
+     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"
+    />
     <link rel="shortcut icon" href="" type="image/x-icon" />
     <title>Phodzo Nagana's Portfolio</title>
   </head>
@@ -336,6 +344,41 @@
         </div>
       </section>
     </main>
+
+    <!---Chatbot -->
+    
+    <div id="chatbot-icon">
+      <i
+        class="zmdi zmdi-comment-text"
+        style="color: white; font-size: 24px"
+      ></i>
+    </div>
+    <!--main chatbot-->
+    <div class="card" id="chatbot-interface">
+      <div id="header">
+        <h1>Chatbuddy</h1>
+      </div>
+      <div id="message-section">
+        <div class="message" id="bot">
+          <span id="bot-response">Hi!, How can I help you today?</span>
+        </div>
+      </div>
+      <div id="input-section">
+        <input
+          id="input"
+          type="text"
+          placeholder="Type a message"
+          autocomplete="off"
+          autofocus="autofocus"
+        />
+        <button class="send" onclick="sendMessage()">
+          <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
+        </button>
+      </div>
+    </div>
+
+        <!---Chatbot end -->
+
     <!---Footer-->
     <footer class="footer">
   <div class="top-footer">
@@ -373,11 +416,12 @@
     <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Phodzo Nagana</a> All rights reserved 2024</p>
   </div>
 </footer>
-
+  <!-- Chatbot Iframe -->
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./javascript/scripts.js"></script>
+    <script src="./javascript/chatscript.js"></script>
   </body>
 </html>
