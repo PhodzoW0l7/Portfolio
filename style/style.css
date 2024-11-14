@@ -374,66 +374,63 @@ nav.scrolled .btn {
   border-radius: 5px;
 }
 
+.top-header h1 {
+  font-size: 2.5rem; /* Larger heading */
+  margin-bottom: 30px;
+  color: #2c3e50; /* Darker color for better contrast */
+}
+
+/* Project Container Styling */
 .project-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between project boxes as needed */
+  display: grid; /* Use grid for a modern layout */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 30px; /* Increased gap for better spacing */
+  justify-items: center; /* Center items in grid */
 }
-
 .project-box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 30%;
-  height: 250px;
-  background: var(--color-white);
-  border-radius: 20px;
-  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  background: #ffffff;
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Full width within grid item */
+  max-width: 350px; /* Max width for project boxes */
+  text-align: left;
 }
 
-.project-box > i {
-  font-size: 50px;
-  color: var(--third-color);
-  margin-bottom: 10px;
+.project-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
+.project-box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Image Styling */
+.project-box img {
+  width: 100%;
+  height: 200px; /* Consistent height */
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; /* Rounded corners for the image */
+}
+
+/* Title and Description Styling */
 .project-box h3 {
-  margin: 10px 0;
-  font-size: 18px;
+  margin: 15px 0 10px;
+  font-size: 1.5rem; /* Larger title */
+  color: #2c3e50; /* Darker color for titles */
 }
 
 .project-box label {
-  font-size: 15px;
-  color: #777;
-}
-
-.project-box::after,
-.contact-info::after {
-  content: "";
-  position: absolute;
-  bottom: -100%;
-  background: var(--third-color);
-  width: 100%;
-  height: 100%;
-  transition: 0.4s;
-  z-index: 1;
-}
-
-.project-box:hover::after,
-.contact-info:hover.contact-info::after {
-  bottom: 0;
-}
-
-.project-box:hover i,
-.project-box:hover h3,
-.project-box:hover label {
-  color: var(--color-white);
-  z-index: 2;
+  font-size: 0.95rem; /* Slightly larger font size */
+  color: #7f8c8d; /* Softer color for descriptions */
+  line-height: 1.6; /* Improved line height for readability */
 }
 .contact-info {
   position: relative;
