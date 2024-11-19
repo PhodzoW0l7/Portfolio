@@ -304,47 +304,56 @@
 
       <!------Projects end -->
       <section class="section" id="contact">
+        <!-- Removed the outer form -->
         <div class="top-header">
-          <h1>Get in touch</h1>
-          <br>
-          <span>Do you have a project in mind or you would like to collaborate? </span>
+          <h1>Get in touch</h1><br>
+          <span>Do you have a project in mind or would you like to collaborate?</span>
         </div>
         <div class="contact-row">
           <div class="contact-col">
             <div class="contact-info">
               <h2>Find me <i class="fa-solid fa-arrow-down"></i></h2>
               <p>
-                <i class="fa-brands fa-github"></i>Github:
-                https://github.com/PhodzoW0l7
+                <i class="fa-brands fa-github"></i> Github: <a href="https://github.com/PhodzoW0l7" target="_blank">https://github.com/PhodzoW0l7</a>
               </p>
             </div>
           </div>
           <div class="contact-col">
             <div class="contact-form-control">
-              <div class="contact-form-inputs">
+              <!-- The form is kept here -->
+              <form id="contact-form" class="contact-form-inputs" onsubmit="sendEmail(event)">
                 <input
                   type="text"
+                  id="name"
                   class="contact-input-field"
                   placeholder="Name"
+                  name="user_name"
+                  required
                 />
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   class="contact-input-field"
                   placeholder="Email"
+                  name="user_email"
+                  required
                 />
-              </div>
-              <div class="contact-textarea">
-                <textarea placeholder="Message"></textarea>
-              </div>
-              <div class="contact-form-button">
-                <button class="contact-btn">
-                  Send </i>
-                </button>
-              </div>
+                <textarea
+                  id="message"
+                  class="contact-textarea"
+                  placeholder="Message"
+                  name="message"
+                  required
+                ></textarea>
+                <div class="contact-form-button">
+                  <button type="submit" class="contact-btn">Send</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
+      
     </main>
 
     <!---Chatbot -->
@@ -413,6 +422,7 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="./javascript/scripts.js"></script>
     <script src="chatbot/main.js"></script>
   </body>

@@ -65,3 +65,26 @@ function handleUserMessage(event) {
     chatContainer.scrollTop = chatContainer.scrollHeight;
   }  
 }
+// Initialize EmailJS with your User ID
+emailjs.init("3ovpuIyGV9lbKcY_j");
+function sendEmail(event) {
+  event.preventDefault(); // Prevent form from refreshing the page
+
+  // Get the form element by ID
+  const form = document.getElementById("contact-form");
+  if (!form) {
+    console.error("Form not found!");
+    return;
+  }
+
+  // Send the form data to EmailJS
+  emailjs.sendForm("service_6p0zq8g", "template_iqzo52d", form)
+    .then((response) => {
+      alert("Message sent successfully!");
+      form.reset(); // Reset the form fields after success
+    })
+    .catch((error) => {
+      alert("There was an error sending your message. Please try again.");
+      console.error("Error:", error);
+    });
+}
