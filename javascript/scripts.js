@@ -47,13 +47,21 @@ function handleUserMessage(event) {
   event.preventDefault(); // Prevent form submission
   const input = document.querySelector(".message-input");
   const userMessage = input.value;
-
-  // Append user's message to chat
-  appendMessage("Phodzo", userMessage, "right-message", "user.png");
-
-  // Clear input field
-  input.value = "";
-
-  // Optionally respond with a greeting or another message
-  appendMessage("Bot", "Hi!", "left-message", "chatbot.png");
+  function appendMessage(name, text, side, img) {
+    const chatContainer = document.querySelector(".messenger-chat");
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const messageHTML = `
+      <div class="message ${side}-message">
+        <div class="message-img" style="background-image:url(${img})"></div>
+        <div>
+          <div class="message-info">
+            <div class="message-info-name">${name}</div>
+            <div class="message-info-time">${time}</div>
+          </div>
+          <div class="message-bubble">${text}</div>
+        </div>
+      </div>`;
+    chatContainer.insertAdjacentHTML("beforeend", messageHTML);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }  
 }

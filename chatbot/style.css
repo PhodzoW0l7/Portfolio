@@ -64,10 +64,11 @@
 }
 
 #chatbot-wrapper .messenger-chat {
-  flex-grow: 1; /* Allows chat messages to grow and take the remaining space */
-  overflow-y: auto;
-  padding: 10px;
-  max-height: 280px; /* Adjust this value to ensure it fits within the chatbot window */
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 8px; /* Reduced padding */
+    max-height: 250px; /* Reduced height for compactness */
+    background-color: #e6e6e6; /* Adjust this value to ensure it fits within the chatbot window */
 }
 #chatbot-wrapper .messenger-chat::-webkit-scrollbar {
   width: 6px;
@@ -88,6 +89,17 @@
   margin-bottom: 10px;
 }
 
+#chatbot-wrapper .message-text {
+    word-wrap: break-word;
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+
+#chatbot-wrapper .message-info {
+    font-size: 0.75rem; /* Smaller timestamp font */
+    color: #0e8ce0;
+    margin-bottom: 5px; /* Space between info and bubble */
+}
+
 #chatbot-wrapper .message:last-of-type {
   margin: 0;
 }
@@ -101,10 +113,25 @@
   border-radius: 50%;
 }
 
+#chatbot-wrapper .left-message .message-bubble {
+    background: #f0f0f0; /* Light grayish white for bot messages */
+    color: #000;
+    border-bottom-left-radius: 0;
+    border-radius: 15px;
+    font-size: 0.9rem; /* Slightly smaller text for compactness */
+  }
+  
+#chatbot-wrapper .right-message .message-bubble {
+    background: #1e90ff; /* Bright blue for user messages */
+    color: #fff;
+    border-bottom-right-radius: 0;
+    border-radius: 15px;
+    font-size: 0.9rem; /* Match text size */
+  }
 #chatbot-wrapper .message-bubble {
-  max-width: 250px;
-  padding: 15px;
-  border-radius: 15px;
+    max-width: 230px; /* Slightly reduced width for compactness */
+  padding: 10px; /* Reduced padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #chatbot-wrapper .left-message .message-bubble {
@@ -150,6 +177,8 @@
   border-radius: 5px;
   padding: 10px 15px;
   transition: border-color 0.3s;
+  padding: 8px 10px; /* Compact input area */
+  font-size: 0.9rem
 }
 
 #chatbot-wrapper .message-input:focus {
@@ -165,6 +194,8 @@
   border-radius: 5px;
   padding: 5px 5px;
   transition: background-color 0.3s;
+  padding: 5px 10px; /* Compact button size */
+  font-size: 1rem;
 }
 
 #chatbot-wrapper .message-send-btn:hover {
