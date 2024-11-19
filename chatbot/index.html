@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <title>Chatbuddy</title>
+</head>
+<body>
+    <section id="chatbot-window" class="messenger" style="display: none;">
+        <header class="messenger-header">
+          <div class="messenger-header-title">
+            <img src="chatbot/chatbot.png" alt="">
+            <p>Chatbuddy</p>
+          </div>
+        </header>
+        <main class="messenger-chat">
+          <div class="message left-message">
+            <div
+              class="message-img"
+              style="background-image: url(chatbot/chatbot.png);">
+            </div>
+            <div class="message-bubble">
+              <div class="message-info">
+                <div class="message-info-name">Bot</div>
+                <div class="message-info-time">11:11</div>
+              </div>
+              <div class="message-text">
+                Hi! Welcome to Phodzo's Portfolio Chatbot. How can I be of service today?
+              </div>
+            </div>
+          </div>
+          <div class="message right-message">
+            <div
+              class="message-img"
+              style="background-image: url(chatbot/user.png);">
+            </div>
+            <div class="message-bubble">
+              <div class="message-info">
+                <div class="message-info-name">Phodzo</div>
+                <div class="message-info-time">11:11</div>
+              </div>
+              <div class="message-text">
+                I'll change my name in the JavaScript side.
+              </div>
+            </div>
+          </div>
+        </main>
+        <form class="message-inputarea">
+          <input type="text" class="message-input" placeholder="Write your message here">
+          <button type="submit" class="message-send-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </section>
+      
+    <script src="main.js"></script>
+</body>
+</html>

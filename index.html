@@ -12,6 +12,7 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="chatbot/style.css">
      <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap"
@@ -346,39 +347,58 @@
     </main>
 
     <!---Chatbot -->
+    <div id="chatbot-wrapper">
+      <!-- Chatbot Icon -->
+      <div id="chatbot-icon" onclick="toggleChatbot()">
+        <i
+          class="zmdi zmdi-comment-text"
+          style="color: white; font-size: 24px; cursor: pointer;">
+        </i>
+      </div>
+      
+      <!-- Chatbot Window -->
+      <section id="chatbot-window" class="messenger" style="display: none;">
+        <header class="messenger-header">
+          <div class="messenger-header-title">
+            <img src="chatbot/chatbot.png" alt="Chatbot Icon">
+            <p>Chatbuddy</p>
+          </div>
+        </header>
+        <main class="messenger-chat">
+          <div class="message left-message">
+            <div class="message-img" style="background-image: url(chatbot/chatbot.png);"></div>
+            <div class="message-bubble">
+              <div class="message-info">
+                <div class="message-info-name">Bot</div>
+                <div class="message-info-time">11:11</div>
+              </div>
+              <div class="message-text">
+                Hi! Welcome to Phodzo's Portfolio Chatbot. How can I help today?
+              </div>
+            </div>
+          </div>
+          <div class="message right-message">
+            <div class="message-img" style="background-image: url(chatbot/user.png);"></div>
+            <div class="message-bubble">
+              <div class="message-info">
+                <div class="message-info-name">Phodzo</div>
+                <div class="message-info-time">11:11</div>
+              </div>
+              <div class="message-text">
+                I'll change my name in the JavaScript side.
+              </div>
+            </div>
+          </div>
+        </main>
+        <form class="message-inputarea">
+          <input type="text" class="message-input" placeholder="Write your message here">
+          <button type="submit" class="message-send-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </section>
+    </div>
     
-    <div id="chatbot-icon">
-      <i
-        class="zmdi zmdi-comment-text"
-        style="color: white; font-size: 24px"
-      ></i>
-    </div>
-    <!--main chatbot-->
-    <div class="card-chatbot" id="chatbot-interface">
-  <div id="header-chatbot">
-    <h1>Chatbuddy</h1>
-  </div>
-  <div id="message-section"> <!-- Change the ID to match -->
-    <div class="message" id="bot">
-      <span id="bot-response">Hi!, How can I help you today?</span>
-    </div>
-  </div>
-  <div id="input-section">
-    <input
-      id="input-chatbot"
-      type="text"
-      placeholder="Type a message"
-      autocomplete="off"
-      autofocus="autofocus"
-    />
-    <button class="send" onclick="sendMessage()">
-      <div class="circle-chatbot"><i class="zmdi zmdi-mail-send"></i></div>
-    </button>
-  </div>
-</div>
 
 
-        <!---Chatbot end -->
 
     <!---Footer-->
     <footer class="footer">
@@ -423,6 +443,6 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./javascript/scripts.js"></script>
-    <script src="./javascript/chatscript.js"></script>
+    <script src="chatbot/main.js"></script>
   </body>
 </html>

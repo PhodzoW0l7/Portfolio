@@ -607,122 +607,37 @@ nav.scrolled .btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  cursor: pointer;
-  background-color: #007bff; /* Primary color */
-  border-radius: 50%; /* Ensures it's circular */
-  width: 50px; /* Set a fixed width */
-  height: 50px; /* Set a fixed height */
-  display: flex; /* Center icon */
-  align-items: center; /* Center icon vertically */
-  justify-content: center; /* Center icon horizontally */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensure it's above other content */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-}
-
-#chatbot-icon:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: scale(1.1); /* Slightly increase size on hover */
-}
-/* Chatbot card styling */
-.card-chatbot {
-  display: none; /* Initially hidden */
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  width: 400px;
-  position: fixed;
-  padding: 20px;
-  bottom: 80px; /* Position above the icon */
-  right: 20px;
-  z-index: 1000;
-  background-color: #ffffff; /* White background */
-  transition: all 0.3s ease; /* Smooth transition */
-}
-
-/* Header styling */
-#header-chatbot {
-  background-color: #4a90e2; /* Header color */
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.5em; /* Larger font size */
-  font-weight: bold;
-  border-radius: 8px 8px 0 0; /* Match with card radius */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Message section styling */
-#message-section {
-  padding: 10px;
-  overflow-y: auto;
-  max-height: 300px; /* Adjusted for card height */
-  border-radius: 8px; /* Rounded corners */
-}
-
-/* Message styling */
-.message {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  max-width: 80%;
-  position: relative; /* For pseudo-elements */
-}
-
-/* Bot message styling */
-#bot {
-  background-color: #f1f0f0; /* Light gray for bot messages */
-  color: #333;
-  align-self: flex-start;
-}
-
-/* Input section styling */
-#input-section {
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid #e0e0e0;
-}
-
-/* Input field styling */
-#input-chatbot {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 1em; /* Slightly larger font */
-  outline: none;
-  margin-right: 10px;
-  transition: border-color 0.3s; /* Smooth transition */
-}
-
-#input-chatbot:focus {
-  border-color: #4a90e2; /* Change border color on focus */
-}
-
-/* Send button styling */
-.send {
-  border: none; /* Remove default border */
-  background: none; /* Remove background */
-  cursor: pointer; /* Pointer cursor */
-}
-
-/* Circle button styling */
-.circle-chatbot {
-  width: 45px; /* Slightly larger button */
-  height: 45px;
-  background-color: #4a90e2; /* Button color */
+  background-color: #007bff;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  transition: background-color 0.3s; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
 }
 
-.circle-chatbot:hover {
-  background-color: #357abd; /* Darker shade on hover */
+/* Chatbot window styling */
+#chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 999;
+  display: none; /* Hidden by default */
 }
+#chatbot-window {
+  transition: opacity 0.3s ease-in-out;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 480px) {

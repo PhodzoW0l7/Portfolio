@@ -39,17 +39,10 @@ var typingEffect = new Typed(".typed-text", {
   backDelay: 2000,
 });
 
-const chatbotIcon = document.getElementById("chatbot-icon");
-const chatbotInterface = document.getElementById("chatbot-interface");
+function toggleChatbot() {
+  const chatbotWindow = document.getElementById("chatbot-window");
+  const isHidden = chatbotWindow.style.display === "none";
 
-// Function to toggle the chatbot interface
-chatbotIcon.addEventListener("click", function () {
-  if (
-    chatbotInterface.style.display === "none" ||
-    chatbotInterface.style.display === ""
-  ) {
-    chatbotInterface.style.display = "block"; // Show the chatbot
-  } else {
-    chatbotInterface.style.display = "none"; // Hide the chatbot
-  }
-});
+  // Toggle display
+  chatbotWindow.style.display = isHidden ? "block" : "none";
+}
