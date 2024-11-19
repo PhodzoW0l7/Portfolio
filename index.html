@@ -347,59 +347,41 @@
     </main>
 
     <!---Chatbot -->
-    <div id="chatbot-wrapper">
-      <!-- Chatbot Icon -->
-      <div id="chatbot-icon" onclick="toggleChatbot()">
-        <i
-          class="zmdi zmdi-comment-text"
-          style="color: white; font-size: 24px; cursor: pointer;">
-        </i>
-      </div>
-      
-      <!-- Chatbot Window -->
-      <section id="chatbot-window" class="messenger" style="display: none;">
+   <div id="chatbot-wrapper">
+    <div id="chatbot-icon" onclick="toggleChatbot()">
+        <i class="zmdi zmdi-comment-text" style="color: white; font-size: 24px; cursor: pointer;"></i>
+    </div>
+
+    <!-- Chatbot Window -->
+    <section id="chatbot-window" class="messenger" style="display: none;">
         <header class="messenger-header">
-          <div class="messenger-header-title">
-            <img src="chatbot/chatbot.png" alt="Chatbot Icon">
-            <p>Chatbuddy</p>
-          </div>
+            <div class="messenger-header-title">
+                <img src="chatbot/chatbot.png" alt="Chatbot Icon">
+                <p>Chatbuddy</p>
+            </div>
         </header>
         <main class="messenger-chat">
-          <div class="message left-message">
-            <div class="message-img" style="background-image: url(chatbot/chatbot.png);"></div>
-            <div class="message-bubble">
-              <div class="message-info">
-                <div class="message-info-name">Bot</div>
-                <div class="message-info-time">11:11</div>
-              </div>
-              <div class="message-text">
-                Hi! Welcome to Phodzo's Portfolio Chatbot. How can I help today?
-              </div>
+            <!-- Initial greeting message -->
+            <div class="message left-message">
+                <div class="message-img" style="background-image: url(chatbot/chatbot.png);"></div>
+                <div class="message-bubble">
+                    <div class="message-info">
+                        <div class="message-info-name">Bot</div>
+                        <div class="message-info-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                    </div>
+                    <div class="message-text">
+                        Hi! Welcome to Phodzo's Portfolio Chatbot.
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="message right-message">
-            <div class="message-img" style="background-image: url(chatbot/user.png);"></div>
-            <div class="message-bubble">
-              <div class="message-info">
-                <div class="message-info-name">Phodzo</div>
-                <div class="message-info-time">11:11</div>
-              </div>
-              <div class="message-text">
-                I'll change my name in the JavaScript side.
-              </div>
-            </div>
-          </div>
         </main>
-        <form class="message-inputarea">
-          <input type="text" class="message-input" placeholder="Write your message here">
-          <button type="submit" class="message-send-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        <form class="message-inputarea" onsubmit="return handleUserMessage(event)">
+            <input type="text" class="message-input" placeholder="Write your message here" required>
+            <button type="submit" class="message-send-btn"><i class="fa-solid fa-arrow-right"></i></button>
         </form>
-      </section>
-    </div>
+    </section>
+</div>
     
-
-
-
     <!---Footer-->
     <footer class="footer">
   <div class="top-footer">
@@ -437,7 +419,7 @@
     <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Phodzo Nagana</a> All rights reserved 2024</p>
   </div>
 </footer>
-  <!-- Chatbot Iframe -->
+
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>

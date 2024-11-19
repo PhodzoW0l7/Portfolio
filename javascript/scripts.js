@@ -38,11 +38,22 @@ var typingEffect = new Typed(".typed-text", {
   backSpeed: 80,
   backDelay: 2000,
 });
-
 function toggleChatbot() {
   const chatbotWindow = document.getElementById("chatbot-window");
-  const isHidden = chatbotWindow.style.display === "none";
+  chatbotWindow.style.display =
+    chatbotWindow.style.display === "none" ? "block" : "none";
+}
+function handleUserMessage(event) {
+  event.preventDefault(); // Prevent form submission
+  const input = document.querySelector(".message-input");
+  const userMessage = input.value;
 
-  // Toggle display
-  chatbotWindow.style.display = isHidden ? "block" : "none";
+  // Append user's message to chat
+  appendMessage("Phodzo", userMessage, "right-message", "user.png");
+
+  // Clear input field
+  input.value = "";
+
+  // Optionally respond with a greeting or another message
+  appendMessage("Bot", "Hi!", "left-message", "chatbot.png");
 }
