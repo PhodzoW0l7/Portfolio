@@ -150,7 +150,7 @@ nav.scrolled .btn {
   background-color: rgb(40, 138, 204); /* Darker color when scrolled */
 }
 .wrapper {
-  padding-top: 90px;
+  padding-top: -60px;
   padding-inline: 10vw;
 }
 
@@ -336,6 +336,8 @@ nav.scrolled .btn {
   line-height: 1.6; /* Increased line height for better readability */
   font-family: 'Arial', sans-serif; /* Clean, modern font */
   text-align: justify; /* Justify text for neat alignment */
+  margin-top: -30px;
+  margin-bottom: 30px;
 }
 .skills-header h3 {
   color: #777;
