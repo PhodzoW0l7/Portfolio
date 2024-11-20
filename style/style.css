@@ -36,7 +36,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #bbb;
 }
-
 nav {
   position: fixed;
   display: flex;
@@ -108,6 +107,7 @@ nav.scrolled .btn {
   font-size: 28px;
   cursor: pointer;
 }
+
 .btn {
   font-weight: 500;
   font-size: 14px; /* Decrease font size */
@@ -150,7 +150,7 @@ nav.scrolled .btn {
   background-color: rgb(40, 138, 204); /* Darker color when scrolled */
 }
 .wrapper {
-  padding-top: 90px;
+  padding-top: -60px;
   padding-inline: 10vw;
 }
 
@@ -235,17 +235,17 @@ nav.scrolled .btn {
 .icon:hover {
   color: var(--third-color);
 }
-
 .featured-image {
   display: flex;
   justify-content: right;
-  align-content: center;
+  align-items: center; /* Adjusted to properly center the content vertically */
   min-height: 80vh;
   width: 50%;
 }
+
 .image {
   margin: auto 0;
-  width: 100%; /* Adjusted for responsiveness */
+  width: 100%; /* Makes the image responsive */
   max-width: 400px; /* Maximum width */
   border-radius: 55%;
   overflow: hidden;
@@ -254,8 +254,9 @@ nav.scrolled .btn {
 
 .image img {
   width: 100%; /* Adjusted for responsiveness */
-  max-width: 400px; /* Maximum width */
-  object-fit: cover;
+  max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 @keyframes imgFloat {
@@ -264,6 +265,7 @@ nav.scrolled .btn {
     border-radius: 45% 55% 45% 55%;
   }
 }
+
 .scroll-btn {
   position: absolute;
   bottom: 0;
@@ -308,22 +310,34 @@ nav.scrolled .btn {
   width: 100%;
   max-width: 800px;
 }
+#intro {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 40px 20px; /* Padding around the content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 30px; /* Top margin to separate from other sections */
+}
 .about-info {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px;
-  background: var(--color-white);
-  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-  border-radius: 20px;
-  margin-bottom: 20px;
-  width: 140%;
+  text-align: center; /* Center the content */
+  max-width: 800px; /* Max width to prevent stretching */
+  margin: 0 auto; /* Center horizontally */
 }
 
-.about-info > h3 {
-  font-size: 2.4rem;
-  color: #777;
+.about-info h3 {
+  font-size: 2.5rem; /* Large, bold title */
+  font-weight: 600; /* Slightly bold font */
+  color: #333; /* Dark color for contrast */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.about-info p {
+  font-size: 1.2rem; /* Slightly larger font for readability */
+  color: #555; /* Medium dark gray for text */
+  line-height: 1.6; /* Increased line height for better readability */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  text-align: justify; /* Justify text for neat alignment */
+  margin-top: -30px;
+  margin-bottom: 30px;
 }
 .skills-header h3 {
   color: #777;
@@ -384,66 +398,71 @@ nav.scrolled .btn {
   border-radius: 5px;
 }
 
+.top-header h1 {
+  font-size: 2.5rem; /* Larger heading */
+  margin-bottom: 30px;
+  color: #2c3e50; /* Darker color for better contrast */
+}
+/* Project Container Styling */
 .project-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between project boxes as needed */
+  display: grid; /* Use grid for a modern layout */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 30px; /* Increased gap for better spacing */
+  justify-items: center; /* Center items in grid */
 }
 
 .project-box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 30%;
-  height: 250px;
-  background: var(--color-white);
-  border-radius: 20px;
-  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  background: #ffffff;
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Full width within grid item */
+  max-width: 350px; /* Max width for project boxes */
+  text-align: left; /* Keep text alignment to the left for other elements */
 }
 
-.project-box > i {
-  font-size: 50px;
-  color: var(--third-color);
-  margin-bottom: 10px;
+.project-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.project-box h3 {
-  margin: 10px 0;
-  font-size: 18px;
+.project-box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-.project-box label {
-  font-size: 15px;
-  color: #777;
-}
-
-.project-box::after,
-.contact-info::after {
-  content: "";
-  position: absolute;
-  bottom: -100%;
-  background: var(--third-color);
+/* Image Styling */
+.project-box img {
   width: 100%;
-  height: 100%;
-  transition: 0.4s;
-  z-index: 1;
+  height: 200px; /* Consistent height */
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; /* Rounded corners for the image */
 }
 
-.project-box:hover::after,
-.contact-info:hover.contact-info::after {
-  bottom: 0;
+/* Title and Description Styling */
+.project-box h3 {
+  margin: 15px 0 10px;
+  font-size: 1.5rem; /* Larger title */
+  color: #2c3e50;
+  padding: 10px;
+  margin-top: -5px;
+  margin-bottom: -3px;
 }
 
-.project-box:hover i,
-.project-box:hover h3,
-.project-box:hover label {
-  color: var(--color-white);
-  z-index: 2;
+/* Adjusted Label Styling */
+.project-box label {
+  font-size: 0.95rem; /* Slightly larger font size */
+  color: #7f8c8d; /* Softer color for descriptions */
+  line-height: 1.6;
+  text-align: center; /* Center the text */
+  padding: 0 10px; /* Add horizontal padding to the label */
+  display: block; /* Ensure label behaves like a block element */
+  margin: 10px 0; /* Add vertical margin for spacing */
 }
 .contact-info {
   position: relative;
@@ -503,32 +522,36 @@ nav.scrolled .btn {
 .contact-form-control {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
 }
 
 .contact-form-inputs {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
 }
 
 .contact-input-field {
-  width: 50%;
-  height: 55px;
+  width: 100%;
+  height: 45px;
   background: transparent;
   border: 2px solid #aaa;
-  padding-inline: 20px;
+  padding: 0 15px;
+  font-size: 16px;
   outline: none;
+  border-radius: 8px;
 }
 
-.contact-textarea textarea {
+.contact-textarea {
   width: 100%;
-  height: 250px;
+  height: 150px;
   background: transparent;
   border: 2px solid #aaa;
-  border-radius: 10px;
-  padding: 15px 20px;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
   outline: none;
   resize: vertical;
 }
@@ -538,12 +561,24 @@ nav.scrolled .btn {
 }
 
 .contact-btn {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px 20px;
   background: var(--third-color);
   color: var(--color-white);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #00b5e7;
+}
+
+.contact-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .contact-row {
@@ -559,20 +594,24 @@ nav.scrolled .btn {
   flex: 1;
   min-width: 300px;
 }
-.form-button > .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--third-color);
-  color: var(--color-white);
+
+/* Success and error messages */
+.alert {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
 }
-.form-button > .btn:hover {
-  background: #00b5e7;
+
+.error {
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
 }
-.form-button i {
-  font-size: 18px;
-  rotate: -45deg;
-}
+
 
 .footer {
   display: flex;
@@ -607,200 +646,183 @@ nav.scrolled .btn {
   font-size: 14px;
   margin-top: 10px;
 }
+/* Chatbot icon styling */
+/* Root Variables */
+:root {
+  --body-bg: rgb(250, 250, 250);
+  --message-bg: rgb(255, 255, 255);
+  --left-message-bg: rgb(22, 109, 190);
+  --right-message-bg: rgb(102, 102, 102);
+}
 
-/***chatbot css ***/
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background: #e3f2fd;
-}
-.chatbot-toggler {
+/* Chatbot Wrapper */
+#chatbot-wrapper {
   position: fixed;
-  bottom: 30px;
-  right: 35px;
-  outline: none;
-  border: none;
-  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+  background-color: #007bff;
   width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
-  cursor: pointer;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #724ae8;
-  transition: all 0.2s ease;
-}
-body.show-chatbot .chatbot-toggler {
-  transform: rotate(90deg);
-}
-.chatbot-toggler span {
-  color: #fff;
-  position: absolute;
-}
-.chatbot-toggler span:last-child,
-body.show-chatbot .chatbot-toggler span:first-child {
-  opacity: 0;
-}
-body.show-chatbot .chatbot-toggler span:last-child {
-  opacity: 1;
-}
-.chatbot {
-  position: fixed;
-  right: 35px;
-  bottom: 90px;
-  width: 420px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.5);
-  transform-origin: bottom right;
-  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
-    0 32px 64px -48px rgba(0, 0, 0, 0.5);
-  transition: all 0.1s ease;
-}
-body.show-chatbot .chatbot {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-.chatbot header {
-  padding: 16px 0;
-  position: relative;
-  text-align: center;
-  color: #fff;
-  background: #724ae8;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-.chatbot header span {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transform: translateY(-50%);
-}
-header h2 {
-  font-size: 1.4rem;
-}
-.chatbot .chatbox {
-  overflow-y: auto;
-  height: 510px;
-  padding: 30px 20px 100px;
-}
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
-  width: 6px;
-}
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 25px;
-}
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 25px;
-}
-.chatbox .chat {
-  display: flex;
-  list-style: none;
-}
-.chatbox .outgoing {
-  margin: 20px 0;
-  justify-content: flex-end;
-}
-.chatbox .incoming span {
-  width: 32px;
-  height: 32px;
-  color: #fff;
-  cursor: default;
-  text-align: center;
-  line-height: 32px;
-  align-self: flex-end;
-  background: #724ae8;
-  border-radius: 4px;
-  margin: 0 10px 7px 0;
-}
-.chatbox .chat p {
-  white-space: pre-wrap;
-  padding: 12px 16px;
-  border-radius: 10px 10px 0 10px;
-  max-width: 75%;
-  color: #fff;
-  font-size: 0.95rem;
-  background: #724ae8;
-}
-.chatbox .incoming p {
-  border-radius: 10px 10px 10px 0;
-}
-.chatbox .chat p.error {
-  color: #721c24;
-  background: #f8d7da;
-}
-.chatbox .incoming p {
-  color: #000;
-  background: #f2f2f2;
-}
-.chatbot .chat-input {
-  display: flex;
-  gap: 5px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  padding: 3px 20px;
-  border-top: 1px solid #ddd;
-}
-.chat-input textarea {
-  height: 55px;
-  width: 100%;
-  border: none;
-  outline: none;
-  resize: none;
-  max-height: 180px;
-  padding: 15px 15px 15px 0;
-  font-size: 0.95rem;
-}
-.chat-input span {
-  align-self: flex-end;
-  color: #724ae8;
-  cursor: pointer;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  visibility: hidden;
-  font-size: 1.35rem;
-}
-.chat-input textarea:valid ~ span {
-  visibility: visible;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 490px) {
-  .chatbot-toggler {
-    right: 20px;
-    bottom: 20px;
+#chatbot-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Chatbot Window */
+.messenger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 100%; /* Ensure this takes the full available height */
+  max-height: 400px; /* Fix the height */
+  margin: 2px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Chat Header */
+.messenger-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+  background: #eee;
+  color: #666;
+}
+
+.messenger-header img {
+  height: 30px;
+  width: auto;
+}
+
+.messenger-header p {
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Chat Messages */
+.messenger-chat {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 280px;
+}
+
+.messenger-chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messenger-chat::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 10px;
+}
+
+/* Message Bubbles */
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.message:last-of-type {
+  margin-bottom: 0;
+}
+
+.message-img {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.message-bubble {
+  max-width: 250px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.left-message .message-bubble {
+  background: var(--left-message-bg);
+  color: #fff;
+  border-bottom-left-radius: 0;
+}
+
+.right-message {
+  flex-direction: row-reverse;
+}
+
+.right-message .message-bubble {
+  background: var(--right-message-bg);
+  color: #000;
+  border-bottom-right-radius: 0;
+}
+
+/* Input Area */
+.message-inputarea {
+  display: flex;
+  padding: 10px;
+  background: #f1f1f1;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
+}
+
+.message-input {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 15px;
+}
+
+.message-input:focus {
+  border-color: #999;
+}
+
+.message-send-btn {
+  margin-left: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.message-send-btn:hover {
+  background: #0056b3;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .card-chatbot {
+    width: 90%; /* Full width on small screens */
+    right: 5%; /* Align with screen edge */
   }
-  .chatbot {
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    border-radius: 0;
-    width: 100%;
-  }
-  .chatbot .chatbox {
-    height: 90%;
-    padding: 25px 15px 100px;
-  }
-  .chatbot .chat-input {
-    padding: 5px 15px;
-  }
-  .chatbot header span {
-    display: block;
+
+  #chatbot-icon {
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 }
 
@@ -815,6 +837,18 @@ header h2 {
     width: 100%;
   }
 }
+#intro {
+  padding: 20px; /* Less padding on smaller screens */
+}
+
+.about-info h3 {
+  font-size: 2rem; /* Smaller title on smaller screens */
+}
+
+.about-info p {
+  font-size: 1rem; /* Slightly smaller text */
+}
+
 
 /*****Responsivenes ********/
 @media only screen and (max-width: 1024px) {
@@ -829,38 +863,71 @@ header h2 {
 }
 @media only screen and (max-width: 900px) {
   .nav-button {
-    display: none;
-  }
-
-  .nav-menu.responsive {
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    display: none; /* Hide the chat button on mobile */
   }
 
   .nav-menu {
     position: fixed;
-    top: 100px;
-    left: -100%;
-    transform: translateX(-50%);
-    flex-direction: column; /* Change to column for vertical layout */
-    justify-content: center;
-    align-items: center;
-    background: rgba(211, 234, 248, 0.8); /* Semi-transparent background */
+    top: 89px; /* Move down from the top */
+    right: -35%; /* Start off-screen to the right */
+    width: 35%; /* Set the width to 35% */
+    height: calc(100% - 20px); /* Full height minus the top offset */
+    background: rgba(38, 135, 226, 0.8); /* Semi-transparent background */
     backdrop-filter: blur(20px);
-    width: 100%; /* Full width */
-    min-height: 300px; /* Minimum height */
-    height: auto; /* Adjust height to content */
-    padding: 20px; /* Added padding for additional spacing */
-    transition: 0.3s;
-    border-radius: 15px; /* Optional: rounded corners */
+    border-radius: 0; /* Straight corners */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 20px; /* Optional: padding from the top */
   }
 
-  .nav-menu-list {
+  .nav-menu.responsive {
+    right: 0; /* Move into view when responsive class is added */
+    display: flex; /* Ensure it's displayed */
+  }
+
+  .nav_menu_list {
     flex-direction: column; /* Ensure list items are in a column */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove bullet points */
+  }
+
+  /* Style for navMenu */
+  #myNavMenu {
+    background: linear-gradient(
+      to bottom,
+      rgba(212, 212, 212, 0),
+      rgba(128, 128, 128, 0.555)
+    );
+    transition: background 0.3s ease; /* Smooth transition for background */
+  }
+
+  /* Style for navMenu when scrolled */
+  #myNavMenu.scrolled {
+    background: rgb(38, 135, 226); /* Solid background when scrolled */
+  }
+
+  /* Style for navLinks */
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-color-second); /* Default text color */
+    font-weight: 500;
+    padding: 10px; /* Adjust padding for touch targets */
+    display: block; /* Make the link a block element for full width */
+  }
+
+  /* Change text color to white when scrolled */
+  #myNavMenu.scrolled .nav-link {
+    color: rgb(255, 255, 255);
+  }
+
+  .nav_list {
+    margin: 10px 0; /* Add some spacing between items */
   }
 
   .nav-menu-btn {
-    display: flex;
+    display: flex; /* Show the menu button */
     align-items: center;
     justify-content: center;
   }

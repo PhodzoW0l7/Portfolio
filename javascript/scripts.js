@@ -9,48 +9,23 @@ function myMenuFunction() {
 }
 
 window.onscroll = function () {
-  headerShadow();
+  handleScrollEffects();
 };
 
-function headerShadow() {
+function handleScrollEffects() {
   const navHeader = document.getElementById("header");
+  const navMenu = document.getElementById("myNavMenu");
+  const scrollY = window.scrollY;
 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    navHeader.style.boxShadow = "0 1px 6px rgba(0,0,0,0.1)";
-    navHeader.style.height = "70px";
-    navHeader.style.lineHeight = "70px";
+  // Handle header shadow and height
+  if (scrollY > 50) {
+    navHeader.classList.add("scrolled");
+    navMenu.classList.add("scrolled"); // Add class to navMenu
   } else {
-    navHeader.style.boxShadow = "none";
-    navHeader.style.height = "90px";
-    navHeader.style.lineHeight = "90px";
+    navHeader.classList.remove("scrolled");
+    navMenu.classList.remove("scrolled"); // Remove class from navMenu
   }
 }
-
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector("nav");
-  if (window.scrollY > 0) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector("nav");
-  if (window.scrollY > 0) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector("nav");
-  if (window.scrollY > 0) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
 
 var typingEffect = new Typed(".typed-text", {
   strings: [
@@ -63,109 +38,53 @@ var typingEffect = new Typed(".typed-text", {
   backSpeed: 80,
   backDelay: 2000,
 });
+function toggleChatbot() {
+  const chatbotWindow = document.getElementById("chatbot-window");
+  chatbotWindow.style.display =
+    chatbotWindow.style.display === "none" ? "block" : "none";
+}
+function handleUserMessage(event) {
+  event.preventDefault(); // Prevent form submission
+  const input = document.querySelector(".message-input");
+  const userMessage = input.value;
+  function appendMessage(name, text, side, img) {
+    const chatContainer = document.querySelector(".messenger-chat");
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const messageHTML = `
+      <div class="message ${side}-message">
+        <div class="message-img" style="background-image:url(${img})"></div>
+        <div>
+          <div class="message-info">
+            <div class="message-info-name">${name}</div>
+            <div class="message-info-time">${time}</div>
+          </div>
+          <div class="message-bubble">${text}</div>
+        </div>
+      </div>`;
+    chatContainer.insertAdjacentHTML("beforeend", messageHTML);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }  
+}
+// Initialize EmailJS with your User ID
+emailjs.init("3ovpuIyGV9lbKcY_j");
+function sendEmail(event) {
+  event.preventDefault(); // Prevent form from refreshing the page
 
-const chatbotToggler = document.querySelector(".chatbot-toggler");
-const closeBtn = document.querySelector(".close-btn");
-const chatbox = document.querySelector(".chatbox");
-const chatInput = document.querySelector(".chat-input textarea");
-const sendChatBtn = document.querySelector(".chat-input span");
-
-let userMessage = null; // Variable to store user's message
-const inputInitHeight = chatInput.scrollHeight;
-
-// API configuration
-const API_KEY = "PASTE-YOUR-API-KEY"; // Your API key here
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
-
-const createChatLi = (message, className) => {
-  // Create a chat <li> element with passed message and className
-  const chatLi = document.createElement("li");
-  chatLi.classList.add("chat", `${className}`);
-  let chatContent =
-    className === "outgoing"
-      ? `<p></p>`
-      : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
-  chatLi.innerHTML = chatContent;
-  chatLi.querySelector("p").textContent = message;
-  return chatLi; // return chat <li> element
-};
-
-const generateResponse = async (chatElement) => {
-  const messageElement = chatElement.querySelector("p");
-
-  // Define the properties and message for the API request
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: userMessage }],
-        },
-      ],
-    }),
-  };
-
-  // Send POST request to API, get response and set the reponse as paragraph text
-  try {
-    const response = await fetch(API_URL, requestOptions);
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error.message);
-
-    // Get the API response text and update the message element
-    messageElement.textContent =
-      data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1");
-  } catch (error) {
-    // Handle error
-    messageElement.classList.add("error");
-    messageElement.textContent = error.message;
-  } finally {
-    chatbox.scrollTo(0, chatbox.scrollHeight);
+  // Get the form element by ID
+  const form = document.getElementById("contact-form");
+  if (!form) {
+    console.error("Form not found!");
+    return;
   }
-};
 
-const handleChat = () => {
-  userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
-  if (!userMessage) return;
-
-  // Clear the input textarea and set its height to default
-  chatInput.value = "";
-  chatInput.style.height = `${inputInitHeight}px`;
-
-  // Append the user's message to the chatbox
-  chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-  chatbox.scrollTo(0, chatbox.scrollHeight);
-
-  setTimeout(() => {
-    // Display "Thinking..." message while waiting for the response
-    const incomingChatLi = createChatLi("Thinking...", "incoming");
-    chatbox.appendChild(incomingChatLi);
-    chatbox.scrollTo(0, chatbox.scrollHeight);
-    generateResponse(incomingChatLi);
-  }, 600);
-};
-
-chatInput.addEventListener("input", () => {
-  // Adjust the height of the input textarea based on its content
-  chatInput.style.height = `${inputInitHeight}px`;
-  chatInput.style.height = `${chatInput.scrollHeight}px`;
-});
-
-chatInput.addEventListener("keydown", (e) => {
-  // If Enter key is pressed without Shift key and the window
-  // width is greater than 800px, handle the chat
-  if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-    e.preventDefault();
-    handleChat();
-  }
-});
-
-sendChatBtn.addEventListener("click", handleChat);
-closeBtn.addEventListener("click", () =>
-  document.body.classList.remove("show-chatbot")
-);
-chatbotToggler.addEventListener("click", () =>
-  document.body.classList.toggle("show-chatbot")
-);
- 
+  // Send the form data to EmailJS
+  emailjs.sendForm("service_6p0zq8g", "template_iqzo52d", form)
+    .then((response) => {
+      alert("Message sent successfully!");
+      form.reset(); // Reset the form fields after success
+    })
+    .catch((error) => {
+      alert("There was an error sending your message. Please try again.");
+      console.error("Error:", error);
+    });
+}
