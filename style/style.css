@@ -334,7 +334,7 @@ nav.scrolled .btn {
   font-size: 1.2rem; /* Slightly larger font for readability */
   color: #555; /* Medium dark gray for text */
   line-height: 1.6; /* Increased line height for better readability */
-  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  font-family: "Arial", sans-serif; /* Clean, modern font */
   text-align: justify; /* Justify text for neat alignment */
   margin-top: -30px;
   margin-bottom: 30px;
@@ -403,13 +403,30 @@ nav.scrolled .btn {
   margin-bottom: 30px;
   color: #2c3e50; /* Darker color for better contrast */
 }
-/* Project Container Styling */
+.section#projects {
+  background: rgb(183, 223, 255);
+  background: linear-gradient(
+    121deg,
+    rgba(183, 223, 255, 1) 6%,
+    rgba(235, 248, 255, 1) 21%,
+    rgba(0, 146, 255, 1) 36%,
+    rgba(183, 223, 255, 1) 53%,
+    rgba(241, 249, 255, 1) 70%,
+    rgba(74, 157, 186, 1) 83%
+  );
+  padding: 20px; /* Optional: Add some padding for better spacing */
+  color: white; /* Optional: Change text color for better contrast */
+  width: 100vw; /* Set width to full viewport width */
+  position: relative; /* Ensure it positions correctly */
+  left: 50%; /* Move to center */
+  right: 50%; /* Move to center */
+  margin-left: -50vw; /* Adjust margin to pull back to edges */
+  margin-right: -50vw; /* Adjust margin to pull back to edges */
+}
+
 .project-container {
   display: grid; /* Use grid for a modern layout */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); /* Responsive grid */
+  grid-template-columns: repeat(3, 1fr); /* Fixed three columns */
   gap: 30px; /* Increased gap for better spacing */
   justify-items: center; /* Center items in grid */
 }
@@ -442,6 +459,7 @@ nav.scrolled .btn {
   height: 200px; /* Consistent height */
   object-fit: cover;
   border-radius: 15px 15px 0 0; /* Rounded corners for the image */
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on image */
 }
 
 /* Title and Description Styling */
@@ -450,19 +468,15 @@ nav.scrolled .btn {
   font-size: 1.5rem; /* Larger title */
   color: #2c3e50;
   padding: 10px;
-  margin-top: -5px;
-  margin-bottom: -3px;
+  margin-bottom: 30px;
 }
 
-/* Adjusted Label Styling */
 .project-box label {
   font-size: 0.95rem; /* Slightly larger font size */
   color: #7f8c8d; /* Softer color for descriptions */
   line-height: 1.6;
   text-align: center; /* Center the text */
   padding: 0 10px; /* Add horizontal padding to the label */
-  display: block; /* Ensure label behaves like a block element */
-  margin: 10px 0; /* Add vertical margin for spacing */
 }
 .contact-info {
   position: relative;
@@ -598,7 +612,7 @@ nav.scrolled .btn {
 /* Success and error messages */
 .alert {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   margin-top: 10px;
   text-align: center;
@@ -611,7 +625,6 @@ nav.scrolled .btn {
   margin-top: 10px;
   text-align: center;
 }
-
 
 .footer {
   display: flex;
@@ -813,7 +826,6 @@ nav.scrolled .btn {
   background: #0056b3;
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .card-chatbot {
@@ -848,7 +860,6 @@ nav.scrolled .btn {
 .about-info p {
   font-size: 1rem; /* Slightly smaller text */
 }
-
 
 /*****Responsivenes ********/
 @media only screen and (max-width: 1024px) {
