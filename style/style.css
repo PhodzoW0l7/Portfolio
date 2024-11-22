@@ -403,30 +403,13 @@ nav.scrolled .btn {
   margin-bottom: 30px;
   color: #2c3e50; /* Darker color for better contrast */
 }
-.section#projects {
-  background: rgb(183, 223, 255);
-  background: linear-gradient(
-    121deg,
-    rgba(183, 223, 255, 1) 6%,
-    rgba(235, 248, 255, 1) 21%,
-    rgba(0, 146, 255, 1) 36%,
-    rgba(183, 223, 255, 1) 53%,
-    rgba(241, 249, 255, 1) 70%,
-    rgba(74, 157, 186, 1) 83%
-  );
-  padding: 20px; /* Optional: Add some padding for better spacing */
-  color: white; /* Optional: Change text color for better contrast */
-  width: 100vw; /* Set width to full viewport width */
-  position: relative; /* Ensure it positions correctly */
-  left: 50%; /* Move to center */
-  right: 50%; /* Move to center */
-  margin-left: -50vw; /* Adjust margin to pull back to edges */
-  margin-right: -50vw; /* Adjust margin to pull back to edges */
-}
-
+/* Project Container Styling */
 .project-container {
   display: grid; /* Use grid for a modern layout */
-  grid-template-columns: repeat(3, 1fr); /* Fixed three columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
   gap: 30px; /* Increased gap for better spacing */
   justify-items: center; /* Center items in grid */
 }
@@ -459,7 +442,6 @@ nav.scrolled .btn {
   height: 200px; /* Consistent height */
   object-fit: cover;
   border-radius: 15px 15px 0 0; /* Rounded corners for the image */
-  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on image */
 }
 
 /* Title and Description Styling */
@@ -468,15 +450,19 @@ nav.scrolled .btn {
   font-size: 1.5rem; /* Larger title */
   color: #2c3e50;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-top: -5px;
+  margin-bottom: -3px;
 }
 
+/* Adjusted Label Styling */
 .project-box label {
   font-size: 0.95rem; /* Slightly larger font size */
   color: #7f8c8d; /* Softer color for descriptions */
   line-height: 1.6;
   text-align: center; /* Center the text */
   padding: 0 10px; /* Add horizontal padding to the label */
+  display: block; /* Ensure label behaves like a block element */
+  margin: 10px 0; /* Add vertical margin for spacing */
 }
 .contact-info {
   position: relative;
