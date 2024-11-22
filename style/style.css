@@ -933,7 +933,7 @@ nav.scrolled .btn {
     flex-direction: column;
     justify-content: center;
     height: auto; /* Adjust height to content */
-    padding: 20px; /* Added padding for additional spacing */
+    padding: 5px; /* Added padding for additional spacing */
   }
 
   .featured-text {
