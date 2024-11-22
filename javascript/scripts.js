@@ -49,7 +49,10 @@ function handleUserMessage(event) {
   const userMessage = input.value;
   function appendMessage(name, text, side, img) {
     const chatContainer = document.querySelector(".messenger-chat");
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const time = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
     const messageHTML = `
       <div class="message ${side}-message">
         <div class="message-img" style="background-image:url(${img})"></div>
@@ -63,7 +66,7 @@ function handleUserMessage(event) {
       </div>`;
     chatContainer.insertAdjacentHTML("beforeend", messageHTML);
     chatContainer.scrollTop = chatContainer.scrollHeight;
-  }  
+  }
 }
 // Initialize EmailJS with your User ID
 emailjs.init("3ovpuIyGV9lbKcY_j");
@@ -78,7 +81,8 @@ function sendEmail(event) {
   }
 
   // Send the form data to EmailJS
-  emailjs.sendForm("service_6p0zq8g", "template_iqzo52d", form)
+  emailjs
+    .sendForm("service_6p0zq8g", "template_iqzo52d", form)
     .then((response) => {
       alert("Message sent successfully!");
       form.reset(); // Reset the form fields after success
@@ -87,4 +91,11 @@ function sendEmail(event) {
       alert("There was an error sending your message. Please try again.");
       console.error("Error:", error);
     });
+}
+
+function scrollToContact() {
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
 }
