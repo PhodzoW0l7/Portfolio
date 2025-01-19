@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --body-color: rgb(250, 250, 250);
@@ -334,7 +335,7 @@ nav.scrolled .btn {
   font-size: 1.2rem; /* Slightly larger font for readability */
   color: #555; /* Medium dark gray for text */
   line-height: 1.6; /* Increased line height for better readability */
-  font-family: "Arial", sans-serif; /* Clean, modern font */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
   text-align: justify; /* Justify text for neat alignment */
   margin-top: -30px;
   margin-bottom: 30px;
@@ -598,7 +599,7 @@ nav.scrolled .btn {
 /* Success and error messages */
 .alert {
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
   margin-top: 10px;
   text-align: center;
@@ -611,6 +612,7 @@ nav.scrolled .btn {
   margin-top: 10px;
   text-align: center;
 }
+
 
 .footer {
   display: flex;
@@ -812,6 +814,7 @@ nav.scrolled .btn {
   background: #0056b3;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .card-chatbot {
@@ -847,6 +850,7 @@ nav.scrolled .btn {
   font-size: 1rem; /* Slightly smaller text */
 }
 
+
 /*****Responsivenes ********/
 @media only screen and (max-width: 1024px) {
   .featured-text {
@@ -858,7 +862,7 @@ nav.scrolled .btn {
     height: 320px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media (max-width: 767px) {
   .nav-button {
     display: none; /* Hide the chat button on mobile */
   }
@@ -876,11 +880,11 @@ nav.scrolled .btn {
     flex-direction: column; /* Stack items vertically */
     justify-content: flex-start; /* Align items to the top */
     padding-top: 20px; /* Optional: padding from the top */
+    transition: right 0.3s ease-in-out;
   }
 
   .nav-menu.responsive {
     right: 0; /* Move into view when responsive class is added */
-    display: flex; /* Ensure it's displayed */
   }
 
   .nav_menu_list {
@@ -890,7 +894,6 @@ nav.scrolled .btn {
     list-style: none; /* Remove bullet points */
   }
 
-  /* Style for navMenu */
   #myNavMenu {
     background: linear-gradient(
       to bottom,
@@ -900,12 +903,10 @@ nav.scrolled .btn {
     transition: background 0.3s ease; /* Smooth transition for background */
   }
 
-  /* Style for navMenu when scrolled */
   #myNavMenu.scrolled {
     background: rgb(38, 135, 226); /* Solid background when scrolled */
   }
 
-  /* Style for navLinks */
   .nav-link {
     text-decoration: none;
     color: var(--text-color-second); /* Default text color */
@@ -914,7 +915,6 @@ nav.scrolled .btn {
     display: block; /* Make the link a block element for full width */
   }
 
-  /* Change text color to white when scrolled */
   #myNavMenu.scrolled .nav-link {
     color: rgb(255, 255, 255);
   }
@@ -927,13 +927,63 @@ nav.scrolled .btn {
     display: flex; /* Show the menu button */
     align-items: center;
     justify-content: center;
+    position: relative;
+    cursor: pointer;
   }
+
+  .menu {
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,%3Csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="%23fff"/%3E%3C/svg%3E') no-repeat center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu.animate {
+    transform: rotate(180deg);
+    background: url('data:image/svg+xml,%3Csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="%23fff"/%3E%3C/svg%3E') no-repeat center;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none; /* Hide the toggle button on larger screens */
+  }
+
+  .nav-menu {
+    display: flex !important; /* Show the menu on larger screens */
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .nav_menu_list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav_list {
+    margin: 0 20px;
+  }
+
+  .nav-link {
+    color: var(--text-color-second);
+    padding: 10px;
+  }
+
+  .nav-menu.scrolled .nav-link {
+    color: white;
+  }
+
 
   .featured-box {
     flex-direction: column;
     justify-content: center;
     height: auto; /* Adjust height to content */
-    padding: 5px; /* Added padding for additional spacing */
+    padding: 20px; /* Added padding for additional spacing */
   }
 
   .featured-text {
