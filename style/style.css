@@ -576,6 +576,11 @@ nav.scrolled .btn {
   margin-bottom: 20px;
 }
 
+.featured-box {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .contact-info > p {
   display: flex;
   align-items: center;
