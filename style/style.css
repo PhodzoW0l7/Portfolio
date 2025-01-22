@@ -153,18 +153,12 @@ nav.scrolled .btn {
   padding-top: -60px;
   padding-inline: 10vw;
 }
-
-.featured-box {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  min-height: 700px;
-}
 .featured-text {
   position: relative;
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 120px;
   min-height: 80vh;
   flex-direction: column;
   width: 50%;
@@ -578,7 +572,7 @@ nav.scrolled .btn {
 
 .featured-box {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 
 .contact-info > p {
