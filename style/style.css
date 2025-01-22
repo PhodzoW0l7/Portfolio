@@ -140,7 +140,6 @@ body {
     center center fixed;
   background-size: cover;
 }
-
 .container {
   width: 100%;
   position: relative;
@@ -163,6 +162,7 @@ nav.scrolled .btn {
   flex-direction: column;
   width: 50%;
   padding-left: 20px;
+  padding-right: 40px; /* Added padding to create space */
 }
 
 .featured-text-card span {
@@ -232,25 +232,26 @@ nav.scrolled .btn {
 .featured-image {
   display: flex;
   justify-content: right;
-  align-items: center; /* Adjusted to properly center the content vertically */
+  align-items: center;
   min-height: 80vh;
   width: 50%;
+  padding-left: 40px; /* Added padding to create space */
 }
 
 .image {
   margin: auto 0;
-  width: 100%; /* Makes the image responsive */
-  max-width: 400px; /* Maximum width */
+  width: 100%;
+  max-width: 400px;
   border-radius: 55%;
   overflow: hidden;
   animation: imgFloat 2.2s ease-in-out infinite;
 }
 
 .image img {
-  width: 100%; /* Adjusted for responsiveness */
-  max-width: 100%; /* Ensures the image doesn't exceed the container's width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 @keyframes imgFloat {
