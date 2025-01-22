@@ -968,7 +968,8 @@ nav.scrolled .btn {
 
 @media (max-width: 767px) {
   .featured-box {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column !important;
     justify-content: center;
     height: auto;
     padding: 20px;
@@ -1110,7 +1111,6 @@ nav.scrolled .btn {
   }
 
   .featured-box {
-    flex-direction: column;
     justify-content: center;
     height: auto; /* Adjust height to content */
     padding: 20px; /* Added padding for additional spacing */
