@@ -153,18 +153,12 @@ nav.scrolled .btn {
   padding-top: -60px;
   padding-inline: 10vw;
 }
-
-.featured-box {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  min-height: 700px;
-}
 .featured-text {
   position: relative;
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 120px;
   min-height: 80vh;
   flex-direction: column;
   width: 50%;
@@ -298,11 +292,12 @@ nav.scrolled .btn {
 
 .row {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }
-
 .col {
   display: flex;
   flex-direction: column;
@@ -311,11 +306,14 @@ nav.scrolled .btn {
   max-width: 800px;
 }
 #intro {
-  background-color: #f5f5f5; /* Light gray background */
-  padding: 40px 20px; /* Padding around the content */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-top: 30px; /* Top margin to separate from other sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 .about-info {
   text-align: center; /* Center the content */
@@ -464,6 +462,93 @@ nav.scrolled .btn {
   display: block; /* Ensure label behaves like a block element */
   margin: 10px 0; /* Add vertical margin for spacing */
 }
+.section {
+  padding-block: 5em;
+  text-align: center;
+}
+
+.top-header {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -80px;
+}
+
+.top-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Project Container Styling */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-box {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  text-align: left;
+}
+
+/* Certification Container Styling */
+.certification-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.certification-box {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  text-align: left;
+}
+
+.certification-box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.certification-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.certification-box h3 {
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  padding: 10px;
+  margin-top: -5px;
+  margin-bottom: -3px;
+}
+
+.certification-box label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 10px;
+  display: block;
+  margin: 10px 0;
+}
+
 .contact-info {
   position: relative;
   display: flex;
@@ -483,6 +568,11 @@ nav.scrolled .btn {
 .contact-info > h2 {
   color: var(--color-white);
   margin-bottom: 20px;
+}
+
+.featured-box {
+  display: flex;
+  flex-direction: row-reverse !important;
 }
 
 .contact-info > p {
@@ -851,14 +941,58 @@ nav.scrolled .btn {
 @media only screen and (max-width: 1024px) {
   .featured-text {
     padding: 0;
+    z-index: 1;
   }
-  .image,
+
+  .featured-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 100%;
+  }
+
+  .image {
+    max-width: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
   .image img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
-@media only screen and (max-width: 900px) {
+
+@media (max-width: 767px) {
+  .featured-box {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .featured-text {
+    width: 100%;
+    order: 2;
+    justify-content: center;
+    align-content: flex-start;
+  }
+
+  .featured-image {
+    min-height: auto;
+    width: 100%;
+    order: 1;
+    justify-content: center;
+  }
+
+  .image {
+    max-width: 200px;
+  }
+
   .nav-button {
     display: none; /* Hide the chat button on mobile */
   }
@@ -876,11 +1010,11 @@ nav.scrolled .btn {
     flex-direction: column; /* Stack items vertically */
     justify-content: flex-start; /* Align items to the top */
     padding-top: 20px; /* Optional: padding from the top */
+    transition: right 0.3s ease-in-out;
   }
 
   .nav-menu.responsive {
     right: 0; /* Move into view when responsive class is added */
-    display: flex; /* Ensure it's displayed */
   }
 
   .nav_menu_list {
@@ -890,7 +1024,6 @@ nav.scrolled .btn {
     list-style: none; /* Remove bullet points */
   }
 
-  /* Style for navMenu */
   #myNavMenu {
     background: linear-gradient(
       to bottom,
@@ -900,12 +1033,10 @@ nav.scrolled .btn {
     transition: background 0.3s ease; /* Smooth transition for background */
   }
 
-  /* Style for navMenu when scrolled */
   #myNavMenu.scrolled {
     background: rgb(38, 135, 226); /* Solid background when scrolled */
   }
 
-  /* Style for navLinks */
   .nav-link {
     text-decoration: none;
     color: var(--text-color-second); /* Default text color */
@@ -914,7 +1045,6 @@ nav.scrolled .btn {
     display: block; /* Make the link a block element for full width */
   }
 
-  /* Change text color to white when scrolled */
   #myNavMenu.scrolled .nav-link {
     color: rgb(255, 255, 255);
   }
@@ -927,13 +1057,63 @@ nav.scrolled .btn {
     display: flex; /* Show the menu button */
     align-items: center;
     justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .menu {
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,%3Csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="%23fff"/%3E%3C/svg%3E')
+      no-repeat center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu.animate {
+    transform: rotate(180deg);
+    background: url('data:image/svg+xml,%3Csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="%23fff"/%3E%3C/svg%3E')
+      no-repeat center;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none; /* Hide the toggle button on larger screens */
+  }
+
+  .nav-menu {
+    display: flex !important; /* Show the menu on larger screens */
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .nav_menu_list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav_list {
+    margin: 0 20px;
+  }
+
+  .nav-link {
+    color: var(--text-color-second);
+    padding: 10px;
+  }
+
+  .nav-menu.scrolled .nav-link {
+    color: white;
   }
 
   .featured-box {
-    flex-direction: column;
     justify-content: center;
     height: auto; /* Adjust height to content */
-    padding: 5px; /* Added padding for additional spacing */
+    padding: 20px; /* Added padding for additional spacing */
   }
 
   .featured-text {

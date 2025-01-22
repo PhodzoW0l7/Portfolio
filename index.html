@@ -37,7 +37,7 @@
         <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
             <li class="nav_list">
-              <a href="#" class="nav-link">Home</a>
+              <a href="#home" class="nav-link active">Home</a>
               <div class="circle"></div>
             </li>
             <li class="nav_list">
@@ -49,24 +49,28 @@
               <div class="circle"></div>
             </li>
             <li class="nav_list">
+              <a href="#certifications" class="nav-link">Certifications</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
               <a href="#contact" class="nav-link">Contact</a>
               <div class="circle"></div>
             </li>
           </ul>
         </div>
         <div class="nav-button">
-          <button class="btn" onclick="scrollToContact()">
-            Get in touch <i class="fa-regular fa-message"></i>
+          <button class="btn">
+            Get in touch<i class="fa-regular fa-message"></i>
           </button>
         </div>
-        <div class="nav-menu-btn">
-          <i class="fa-solid fa-bars" onclick="myMenuFunction()"></i>
+        <div class="nav-menu-btn" id="clickWrapper">
+          <div class="menu"></div>
         </div>
       </nav>
     </div>
-    <!------Profile-->
+
     <main class="wrapper">
-      <section class="featured-box">
+      <section class="featured-box" id="home">
         <div class="featured-text">
           <div class="featured-text-card">
             <span>Phodzo Nagana</span>
@@ -84,7 +88,6 @@
             <a href="mailto:phodzonagz12@gmail.com" class="btn blue-btn">
               Email <i class="fa-regular fa-envelope"></i>
             </a>
-
             <a
               href="./assets/Phodzo Software Dev CV.pdf"
               download
@@ -120,15 +123,12 @@
           </div>
         </div>
       </section>
-      <!------Profile end-->
 
-      <!------About Section-->
       <section class="section" id="about">
         <div class="top-header">
           <h1>About</h1>
         </div>
 
-        <!-- Introduction Section -->
         <div id="intro" class="row">
           <div class="col">
             <div class="about-info">
@@ -148,7 +148,6 @@
           </div>
         </div>
 
-        <!-- Skills Section -->
         <div class="row">
           <div class="col">
             <div class="about-info">
@@ -233,6 +232,13 @@
                     />
                     Visual Basic
                   </span>
+                  <span>
+                    <img
+                      src="./assets/icons8-spring-boot-144.png"
+                      alt="Spring Boot Logo"
+                    />
+                    Spring Boot
+                  </span>
                 </div>
               </div>
               <div class="skills-box">
@@ -284,7 +290,7 @@
                       src="./assets/icons8-tomcat-96.png"
                       alt="Apache Logo"
                     />
-                    Apache Tomcat
+                    Apache
                   </span>
                   <span>
                     <img
@@ -299,16 +305,14 @@
           </div>
         </div>
       </section>
-      <!------About Section end-->
 
-      <!------Projects -->
       <section class="section" id="projects">
         <div class="top-header">
           <h1>Projects</h1>
         </div>
         <div class="project-container">
           <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7/Navcrowd">
+            <a href="https://github.com/PhodzoW0l7?tab=repositories">
               <img src="./assets/Untitled.png" alt="Project 1" />
               <h3>Navcrowd</h3>
               <label
@@ -322,16 +326,15 @@
           </div>
 
           <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7/gijimatc-Reactjs">
+            <a href="https://github.com/PhodzoW0l7?tab=repositories">
               <img src="./assets/gijimata.png" alt="Project 2" />
               <h3>Gijima Training Academy</h3>
               <label
                 >Site of a Skills development is a strategic imperative at
                 Bidvest Protea Coin. It enables, amongst other things, superior
                 service delivery to clients, creates synergy between individual
-                performance, behaviour, company objectives and client needs. It
-                similarly enhances employee performance and satisfaction which
-                results in employee retention and other positive results</label
+                performance, behaviour, company objectives and client
+                needs.</label
               >
             </a>
           </div>
@@ -343,9 +346,8 @@
               <label
                 >The Login and Registration Platform is a web application
                 designed to provide secure user authentication and management.
-                Built with ASP.NET for the backend and Angular for the frontend,
-                this platform allows users to easily register and log in,
-                ensuring a seamless and secure experience</label
+                Built with ASP.NET for the backend and Angular for the
+                frontend.</label
               >
             </a>
           </div>
@@ -357,8 +359,7 @@
               <label
                 >The To-Do List Application is a simple yet powerful task
                 management tool built with Node.js. This application allows
-                users to create, edit, and delete tasks effortlessly, providing
-                a seamless experience for managing daily activities.</label
+                users to create, edit, and delete tasks effortlessly.</label
               >
             </a>
           </div>
@@ -372,10 +373,7 @@
               <label
                 >The Personal Portfolio Chatbot is an interactive feature
                 integrated into my personal website, designed to provide
-                visitors with instant information about me and my work. Built
-                using HTML, CSS, and JavaScript, this chatbot serves as a
-                virtual assistant, enhancing user engagement and offering a
-                personalized experience.</label
+                visitors with instant information about me and my work.</label
               >
             </a>
           </div>
@@ -388,18 +386,101 @@
                 >The Kids Learning Platform is an engaging and interactive
                 online educational tool designed specifically for children. This
                 platform allows kids to log in or sign up to explore a variety
-                of subjects, including science, math, drawing, and quizzes, all
-                tailored to enhance their learning experience in a fun and
-                stimulating environment</label
+                of subjects.</label
               >
             </a>
           </div>
         </div>
       </section>
 
-      <!------Projects end -->
+      <section class="section" id="certifications">
+        <div class="top-header">
+          <h1>Certifications</h1>
+        </div>
+        <div class="certification-container">
+          <div class="certification-box">
+            <a
+              href="https://www.credly.com/badges/052caa78-d0c8-48c8-a18b-bff7e16326a5"
+            >
+              <img
+                src="./assets/I2CS__1_.png"
+                alt="Cisco Introduction to Cybersecurity"
+              />
+              <h3>Cisco: Introduction to Cybersecurity</h3>
+              <label
+                >Cisco verifies the earner of this badge successfully completed
+                the Introduction to Cybersecurity course.</label
+              >
+            </a>
+          </div>
+          <div class="certification-box">
+            <a
+              href="https://learn.microsoft.com/en-us/users/phodzonagana-8685/credentials/7238b6fa4531f0a0"
+            >
+              <img
+                src="./assets/microsoft-certified-fundamentals-badge.png"
+                alt="Microsoft Az-900"
+              />
+              <h3>Microsoft Security: AZ-900</h3>
+              <label
+                >Microsoft Certified: Security, Compliance, and Identity
+                Fundamentals</label
+              >
+            </a>
+          </div>
+          <div class="certification-box">
+            <a
+              href="https://www.credly.com/badges/f17d6663-879e-41e5-ab04-71bd35660c3a"
+            >
+              <img src="./assets/intro to threat.png" alt="Fortinet 1" />
+              <h3>Fortinet: Introduction into Threat Landscape</h3>
+              <label
+                >The Introduction to the Threat Landscape 2.0 badge recognizes a
+                fundamental understanding of the cyber threat landscape.</label
+              >
+            </a>
+          </div>
+          <div class="certification-box">
+            <a
+              href="https://www.credly.com/badges/00784969-404d-4ec3-b6b8-f9428e848dc4"
+            >
+              <img src="./assets/getting started v2.0.png" alt="Fortinet 2" />
+              <h3>Fortinet: Getting Started in Cybersecurity 2.0</h3>
+              <label
+                >The Getting Started with Cybersecurity 2.0 badge recognizes a
+                basic understanding of cybersecurity.</label
+              >
+            </a>
+          </div>
+          <div class="certification-box">
+            <a
+              href="https://www.credly.com/badges/801bc97a-7ada-4cc0-b184-6b39c73438dc"
+            >
+              <img src="./assets/fundamentals fortinet.png" alt="Fortinet 3" />
+              <h3>Fortinet Certified Fundamentals Cybersecurity</h3>
+              <label
+                >The Fortinet Certified Fundamentals in Cybersecurity
+                certification validates mastery of entry-level cybersecurity
+                skills.</label
+              >
+            </a>
+          </div>
+          <div class="certification-box">
+            <a
+              href="https://www.credly.com/badges/2e9cfad5-44a7-4bf0-b22e-b3d04c6f637b"
+            >
+              <img src="./assets/isc2 candidate.png" alt="ISC2" />
+              <h3>ISC2 Candidate</h3>
+              <label
+                >ISC2 Candidates are individuals pursuing or considering a
+                cybersecurity certification.</label
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="contact">
-        <!-- Removed the outer form -->
         <div class="top-header">
           <h1>Get in touch</h1>
           <br />
@@ -422,7 +503,6 @@
           </div>
           <div class="contact-col">
             <div class="contact-form-control">
-              <!-- The form is kept here -->
               <form
                 id="contact-form"
                 class="contact-form-inputs"
@@ -461,7 +541,6 @@
       </section>
     </main>
 
-    <!---Chatbot -->
     <div id="chatbot-wrapper">
       <div id="chatbot-icon" onclick="toggleChatbot()">
         <i
@@ -470,7 +549,6 @@
         ></i>
       </div>
 
-      <!-- Chatbot Window -->
       <section id="chatbot-window" class="messenger" style="display: none">
         <header class="messenger-header">
           <div class="messenger-header-title">
@@ -478,9 +556,7 @@
             <p>Chatbuddy</p>
           </div>
         </header>
-        <main class="messenger-chat">
-          <!-- Initial greeting message has been removed -->
-        </main>
+        <main class="messenger-chat"></main>
         <form
           class="message-inputarea"
           onsubmit="return handleUserMessage(event)"
@@ -498,7 +574,6 @@
       </section>
     </div>
 
-    <!---Footer-->
     <footer class="footer">
       <div class="top-footer">
         <p>Phodzo Nagana.</p>
@@ -506,13 +581,16 @@
       <div class="middle-footer">
         <ul class="footer-menu">
           <li class="footer_menu_list">
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li class="footer_menu_list">
             <a href="#about">About</a>
           </li>
           <li class="footer_menu_list">
             <a href="#projects">Projects</a>
+          </li>
+          <li class="footer_menu_list">
+            <a href="#certifications">Certifications</a>
           </li>
           <li class="footer_menu_list">
             <a href="#contact">Contact</a>
@@ -542,8 +620,8 @@
       <div class="bottom-footer">
         <p>
           Copyright &copy;
-          <a href="#" style="text-decoration: none">Phodzo Nagana</a> All rights
-          reserved 2024
+          <a href="#home" style="text-decoration: none">Phodzo Nagana</a> All
+          rights reserved 2025
         </p>
       </div>
     </footer>
