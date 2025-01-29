@@ -996,6 +996,36 @@ nav.scrolled .btn {
   .nav-button {
     display: none; /* Hide the chat button on mobile */
   }
+  .footer {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .top-footer p {
+    font-size: 20px;
+  }
+
+  .middle-footer .footer-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer_menu_list a {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .footer-social-icons {
+    gap: 15px;
+  }
+
+  .footer-social-icons .icon a {
+    font-size: 20px;
+  }
+
+  .bottom-footer p {
+    font-size: 10px;
+  }
 
   .nav-menu {
     position: fixed;
@@ -1154,5 +1184,51 @@ nav.scrolled .btn {
   }
   .project-box {
     width: 100;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .footer {
+    row-gap: 15px; /* Further reduce gap for very small screens */
+  }
+
+  .top-footer p {
+    font-size: 18px; /* Adjust font size for very small screens */
+  }
+
+  .footer_menu_list a {
+    font-size: 11px; /* Smaller font size for very small screens */
+    padding: 4px 6px; /* Adjust padding for very small screens */
+  }
+
+  .footer-social-icons {
+    gap: 10px; /* Reduce gap between icons */
+  }
+
+  .bottom-footer {
+    font-size: 10px; /* Smaller font size for very small screens */
+  }
+  .footer {
+    row-gap: 15px;
+  }
+
+  .top-footer p {
+    font-size: 18px;
+  }
+
+  .footer_menu_list a {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+
+  .footer-social-icons {
+    gap: 10px;
+  }
+
+  .footer-social-icons .icon a {
+    font-size: 18px;
+  }
+
+  .bottom-footer p {
+    font-size: 8px;
   }
 }
