@@ -337,6 +337,86 @@ nav.scrolled .btn {
   margin-top: -30px;
   margin-bottom: 30px;
 }
+/* Section Styling */
+/* #experience {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+} */
+
+/* Header Styling */
+#experience .top-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#experience .top-header h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#experience .top-header span {
+  font-size: 18px;
+  color: #777;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Timeline Container */
+#experience .timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Timeline Wrapper */
+#experience .timeline-wrapper {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Timeline Year */
+#experience .timeline-yr {
+  width: 80px;
+  height: 80px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* Timeline Info */
+#experience .timeline-info {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#experience .timeline-info h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#experience .timeline-info h3 small {
+  display: block;
+  font-size: 16px;
+  color: #777;
+}
+
+#experience .timeline-info p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
 .skills-header h3 {
   color: #777;
   font-size: 30px;
