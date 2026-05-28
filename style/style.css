@@ -1363,10 +1363,9 @@ nav.scrolled .btn {
     order: 1;
     text-align: center;
   }
-
-  .featured-image {
+.featured-image {
     width: 100%;
-    order: 2;
+    order: -1;  /* moves image above the text */
     margin-top: 20px;
   }
 
@@ -1374,7 +1373,6 @@ nav.scrolled .btn {
     width: 200px;
     height: 200px;
   }
-
   .featured-name {
     font-size: 35px;
   }

@@ -35,7 +35,6 @@ function handleScrollEffects() {
   }
 }
 
-// ── Misc ──────────────────────────────────────────
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const div = document.getElementById("clickWrapper");
@@ -43,7 +42,6 @@ div.addEventListener("click", () => {
   div.childNodes[0].classList.toggle("animate");
 });
 
-// ── Typed.js ──────────────────────────────────────
 var typingEffect = new Typed(".typed-text", {
   strings: [
     "Full Stack Developer",
