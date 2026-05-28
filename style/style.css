@@ -147,7 +147,7 @@ body {
   height: 10vh;
 }
 nav.scrolled .btn {
-  background-color: rgb(40, 138, 204); /* Darker color when scrolled */
+  background-color:var(--third-color); /* Darker color when scrolled */
 }
 .wrapper {
   padding-top: -60px;
