@@ -24,6 +24,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="shortcut icon" href="" type="image/x-icon" />
     <title>Phodzo Nagana's Portfolio</title>
   </head>
@@ -131,24 +132,47 @@
           <h1>About</h1>
         </div>
 
-        <div id="intro" class="row">
-          <div class="col">
-            <div class="about-info">
-              <h3>Introduction</h3>
-              <br /><br />
-              <p>
-                Driven Full Stack Developer and Cloud Administrator with
-                hands-on experience in web development, server management, and
-                cybersecurity. Skilled in building responsive websites, creating
-                automation processes, and managing cloud environments.
-                Proficient in HTML, CSS, JavaScript, ReactJS, SQL, MongoDB, and
-                Microsoft Azure. A problem-solver with a passion for integrating
-                technology solutions across front-end, back-end, and server
-                infrastructures.
-              </p>
-            </div>
-          </div>
+<div id="intro" class="row">
+  <div class="col">
+    <div class="about-intro">
+      <h3 class="about-intro-title">
+        Full Stack Developer 
+      </h3>
+        <br>
+      <p class="about-intro-text">
+        Motivated Software Developer with a BSc in Information Technology and
+        over two years of hands-on experience building full-stack, enterprise,
+        and AI-integrated applications. Proficient in Java, Spring Boot, Angular,
+        React, Python, and SQL with a track record of delivering scalable
+        solutions in Agile team environments. Most recently won FNB's internal
+        AI Innovation competition by engineering a prompt injection detection system.
+      </p>
+
+      <div class="about-intro-stats">
+        <div class="about-stat">
+          <span class="about-stat-number">2+</span>
+          <span class="about-stat-label">Years experience</span>
         </div>
+        <div class="about-stat-divider"></div>
+        <div class="about-stat">
+          <span class="about-stat-number">3</span>
+          <span class="about-stat-label">Internships</span>
+        </div>
+        <div class="about-stat-divider"></div>
+        <div class="about-stat">
+          <span class="about-stat-number">10+</span>
+          <span class="about-stat-label">Certifications</span>
+        </div>
+        <div class="about-stat-divider"></div>
+        <div class="about-stat">
+          <span class="about-stat-number">3</span>
+          <span class="about-stat-label">Cloud platforms</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 <section class="section" id="experience">
   <div class="top-header">
     <h1>Experience</h1>
@@ -600,65 +624,98 @@
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="top-header">
-          <h1>Get in touch</h1>
-          <br />
-          <span
-            >Do you have a project in mind or would you like to
-            collaborate?</span
-          >
+<section class="section" id="contact">
+  <div class="top-header">
+    <h1>Get in touch</h1>
+    <br />
+    <span>Have a project in mind or want to collaborate? Let's talk.</span>
+  </div>
+
+  <div class="contact-wrapper">
+
+    <!-- Left: info cards -->
+    <div class="contact-left">
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-regular fa-envelope"></i>
         </div>
-        <div class="contact-row">
-          <div class="contact-col">
-            <div class="contact-info">
-              <h2>Find me <i class="fa-solid fa-arrow-down"></i></h2>
-              <p>
-                <i class="fa-brands fa-github"></i> Github:
-                <a href="https://github.com/PhodzoW0l7" target="_blank"
-                  >https://github.com/PhodzoW0l7</a
-                >
-              </p>
-            </div>
+        <div>
+          <p class="contact-card-label">Email</p>
+          <a href="mailto:Phodzonagz12@gmail.com" class="contact-card-value">
+            Phodzonagz12@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <div>
+          <p class="contact-card-label">GitHub</p>
+          <a href="https://github.com/PhodzoW0l7" target="_blank" class="contact-card-value">
+            PhodzoW0l7
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div>
+          <p class="contact-card-label">LinkedIn</p>
+          <a href="https://linkedin.com/in/phodzo-nagana" target="_blank" class="contact-card-value">
+            Phodzo Nagana
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div>
+          <p class="contact-card-label">Location</p>
+          <span class="contact-card-value">Kempton Park, Gauteng, SA</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: form -->
+    <div class="contact-right">
+      <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)">
+
+        <div class="contact-form-row">
+          <div class="contact-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="user_name" placeholder="Full name" required />
           </div>
-          <div class="contact-col">
-            <div class="contact-form-control">
-              <form
-                id="contact-form"
-                class="contact-form-inputs"
-                onsubmit="sendEmail(event)"
-              >
-                <input
-                  type="text"
-                  id="name"
-                  class="contact-input-field"
-                  placeholder="Name"
-                  name="user_name"
-                  required
-                />
-                <input
-                  type="email"
-                  id="email"
-                  class="contact-input-field"
-                  placeholder="Email"
-                  name="user_email"
-                  required
-                />
-                <textarea
-                  id="message"
-                  class="contact-textarea"
-                  placeholder="Message"
-                  name="message"
-                  required
-                ></textarea>
-                <div class="contact-form-button">
-                  <button type="submit" class="contact-btn">Send</button>
-                </div>
-              </form>
-            </div>
+          <div class="contact-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="user_email" placeholder="your@email.com" required />
           </div>
         </div>
-      </section>
+
+        <div class="contact-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Lets get in touch!" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit" id="submit-btn">
+          <span id="btn-text">Send message</span>
+          <i class="fa-regular fa-paper-plane" id="btn-icon"></i>
+        </button>
+
+        <div id="form-status"></div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
     </main>
 
     <div id="chatbot-wrapper">

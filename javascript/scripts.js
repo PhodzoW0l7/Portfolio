@@ -1,105 +1,142 @@
-
+// ── Nav menu toggle ───────────────────────────────
 function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
-
   if (menuBtn.className === "nav-menu") {
     menuBtn.className += " responsive";
   } else {
     menuBtn.className = "nav-menu";
   }
 }
-const navMenuBtn = document.querySelector('.nav-menu-btn');
-const navMenu = document.querySelector('.nav-menu');
 
-navMenuBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('responsive');
-  navMenuBtn.querySelector('.menu').classList.toggle('animate');
+const navMenuBtn = document.querySelector(".nav-menu-btn");
+const navMenu = document.querySelector(".nav-menu");
+
+navMenuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("responsive");
+  navMenuBtn.querySelector(".menu").classList.toggle("animate");
 });
 
+// ── Scroll effects ────────────────────────────────
 window.onscroll = function () {
   handleScrollEffects();
 };
-          document.getElementById("year").textContent = new Date().getFullYear();
 
 function handleScrollEffects() {
   const navHeader = document.getElementById("header");
   const navMenu = document.getElementById("myNavMenu");
   const scrollY = window.scrollY;
 
-  // Handle header shadow and height
   if (scrollY > 50) {
     navHeader.classList.add("scrolled");
-    navMenu.classList.add("scrolled"); // Add class to navMenu
+    navMenu.classList.add("scrolled");
   } else {
     navHeader.classList.remove("scrolled");
-    navMenu.classList.remove("scrolled"); // Remove class from navMenu
+    navMenu.classList.remove("scrolled");
   }
 }
-const div = document.getElementById("clickWrapper");
 
-div.addEventListener('click', () => {
+// ── Misc ──────────────────────────────────────────
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const div = document.getElementById("clickWrapper");
+div.addEventListener("click", () => {
   div.childNodes[0].classList.toggle("animate");
 });
 
+// ── Typed.js ──────────────────────────────────────
 var typingEffect = new Typed(".typed-text", {
   strings: [
     "Full Stack Developer",
-    "Cloud Administrator",
-    "Cyber Security Analyst",
+    "Software Engineer",
+    "Cloud Security Analyst",
   ],
   loop: true,
   typeSpeed: 60,
   backSpeed: 80,
   backDelay: 2000,
 });
+
+// ── Chatbot ───────────────────────────────────────
+let chatbotGreetingShown = false;
+
 function toggleChatbot() {
   const chatbotWindow = document.getElementById("chatbot-window");
-  chatbotWindow.style.display =
-    chatbotWindow.style.display === "none" ? "block" : "none";
-}
-function handleUserMessage(event) {
-  event.preventDefault(); // Prevent form submission
-  const input = document.querySelector(".message-input");
-  const userMessage = input.value;
-  function appendMessage(name, text, side, img) {
-    const chatContainer = document.querySelector(".messenger-chat");
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const messageHTML = `
-      <div class="message ${side}-message">
-        <div class="message-img" style="background-image:url(${img})"></div>
-        <div>
-          <div class="message-info">
-            <div class="message-info-name">${name}</div>
-            <div class="message-info-time">${time}</div>
+  const isVisible = chatbotWindow.style.display === "block";
+
+  if (!isVisible) {
+    chatbotWindow.style.display = "block";
+
+    // Show greeting only on first open
+    if (!chatbotGreetingShown) {
+      const chatContainer = document.querySelector(".messenger-chat");
+      chatContainer.innerHTML = `
+        <div class="message left-message">
+          <div class="message-img" style="background-image:url(chatbot/chatbot.png)"></div>
+          <div>
+            <div class="message-info">
+              <div class="message-info-name">Chatbuddy</div>
+              <div class="message-info-time">${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</div>
+            </div>
+            <div class="message-bubble">Hi! Welcome to Phodzo's Portfolio Chatbot. Ask me anything about his experience, skills, projects, or certifications!</div>
           </div>
-          <div class="message-bubble">${text}</div>
-        </div>
-      </div>`;
-    chatContainer.insertAdjacentHTML("beforeend", messageHTML);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-  }  
-}
-// Initialize EmailJS with your User ID
-emailjs.init("3ovpuIyGV9lbKcY_j");
-function sendEmail(event) {
-  event.preventDefault(); // Prevent form from refreshing the page
-
-  // Get the form element by ID
-  const form = document.getElementById("contact-form");
-  if (!form) {
-    console.error("Form not found!");
-    return;
+        </div>`;
+      chatbotGreetingShown = true;
+    }
+  } else {
+    chatbotWindow.style.display = "none";
   }
+}
 
-  // Send the form data to EmailJS
-  emailjs.sendForm("service_6p0zq8g", "template_iqzo52d", form)
-    .then((response) => {
-      alert("Message sent successfully!");
-      form.reset(); // Reset the form fields after success
+function handleUserMessage(event) {
+  event.preventDefault();
+  const input = document.querySelector(".message-input");
+  const userMessage = input.value.trim();
+
+  if (!userMessage) return;
+
+  addChat("You", "chatbot/user.png", "right", userMessage);
+  input.value = "";
+
+  const response = getResponse(userMessage);
+
+  const delay = Math.min(userMessage.split(" ").length * 100, 800);
+  setTimeout(() => {
+    addChat("Chatbuddy", "chatbot/chatbot.png", "left", response);
+  }, delay);
+
+  return false;
+}
+
+// ── EmailJS ───────────────────────────────────────
+emailjs.init("3ovpuIyGV9lbKcY_j");
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  const btn     = document.getElementById("submit-btn");
+  const btnText = document.getElementById("btn-text");
+  const btnIcon = document.getElementById("btn-icon");
+  const status  = document.getElementById("form-status");
+
+  btn.disabled = true;
+  btnText.textContent = "Sending...";
+  btnIcon.className = "fa-solid fa-spinner fa-spin";
+
+  emailjs.sendForm("service_me8jj0i", "template_9127pvg", "#contact-form")
+    .then(() => {
+      status.innerHTML = `<div class="form-success">
+        <i class="fa-solid fa-circle-check"></i> Message sent! I'll get back to you soon.
+      </div>`;
+      document.getElementById("contact-form").reset();
     })
-    .catch((error) => {
-      alert("There was an error sending your message. Please try again.");
-      console.error("Error:", error);
+    .catch(() => {
+      status.innerHTML = `<div class="form-error">
+        <i class="fa-solid fa-circle-exclamation"></i> Something went wrong. Try emailing me directly.
+      </div>`;
+    })
+    .finally(() => {
+      btnText.textContent = "Send message";
+      btnIcon.className = "fa-regular fa-paper-plane";
+      btn.disabled = false;
     });
-    
 }
