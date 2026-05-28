@@ -1,7 +1,7 @@
 # Phodzo Nagana's Portfolio
 
 Welcome to my personal portfolio, showcasing my skills, experience, and projects as a Full Stack Developer and Cloud Administrator. This repository includes code for my portfolio website, featuring an interactive user interface and links to my notable projects.
-![screshot](https://github.com/user-attachments/assets/bc9f85b6-030a-423b-80db-227ae1b54a16)
+<img width="1900" height="1000" alt="image" src="https://github.com/user-attachments/assets/f268fce8-ece4-4570-be03-7e90ebabf625" />
 ---
 
 ## 🌐 Live Demo
