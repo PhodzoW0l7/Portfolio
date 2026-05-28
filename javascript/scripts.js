@@ -19,6 +19,7 @@ navMenuBtn.addEventListener('click', () => {
 window.onscroll = function () {
   handleScrollEffects();
 };
+          document.getElementById("year").textContent = new Date().getFullYear();
 
 function handleScrollEffects() {
   const navHeader = document.getElementById("header");
@@ -100,4 +101,5 @@ function sendEmail(event) {
       alert("There was an error sending your message. Please try again.");
       console.error("Error:", error);
     });
+    
 }
