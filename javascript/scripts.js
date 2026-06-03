@@ -138,3 +138,34 @@ function sendEmail(e) {
       btn.disabled = false;
     });
 }
+
+
+
+const moreCerts = document.getElementById('moreCerts');
+const showBtn = document.getElementById('showMoreCertsBtn');
+let expanded = false;
+
+if (showBtn) {
+  showBtn.addEventListener('click', function() {
+    expanded = !expanded;
+    if (expanded) {
+      moreCerts.classList.add('show');
+      showBtn.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Show Less';
+    } else {
+      moreCerts.classList.remove('show');
+      showBtn.innerHTML = '<i class="fa-solid fa-chevron-down"></i> Show All Certifications';
+    }
+  });
+}
+
+document.addEventListener("click", function(event) {
+    if (window.innerWidth <= 768 && navMenu && menuBtn) {
+      const isClickInsideMenu = navMenu.contains(event.target);
+      const isClickOnMenuBtn = menuBtn.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnMenuBtn && navMenu.classList.contains("responsive")) {
+        closeMobileMenu();
+      }
+    }
+  });
+  

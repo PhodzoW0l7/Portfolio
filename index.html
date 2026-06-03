@@ -140,10 +140,10 @@
       </h3>
         <br>
       <p class="about-intro-text">
-        Motivated Software Developer with a BSc in Information Technology and
-        over two years of hands-on experience building full-stack, enterprise,
+        I'm a Software Developer with a BSc in Information Technology and
+        over two years of experience building full-stack, enterprise,
         and AI-integrated applications. Proficient in Java, Spring Boot, Angular,
-        React, Python, and SQL with a track record of delivering scalable
+        React, Python, Asp.Net and SQL with a track record of delivering scalable
         solutions in Agile team environments. Most recently won FNB's internal
         AI Innovation competition by engineering a prompt injection detection system.
       </p>
@@ -173,6 +173,7 @@
     </div>
   </div>
 </div>
+
 <section class="section" id="experience">
   <div class="top-header">
     <h1>Experience</h1>
@@ -424,205 +425,503 @@
   </div>
 </section>
 
-      <section class="section" id="projects">
+       <section class="section" id="projects">
         <div class="top-header">
-          <h1>Projects</h1>
+            <h1>Featured Projects</h1>
         </div>
-        <div class="project-container">
-          <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7?tab=repositories">
-              <img src="./assets/Untitled.png" alt="Project 1" />
-              <h3>Navcrowd</h3>
-              <label
-                >South African website dedicated to being the first official
-                listing independent from any organization. It is designed
-                strictly for the user, providing a platform where local
-                businesses, services, and events can showcase their offerings to
-                residents and visitors alike.</label
-              >
-            </a>
-          </div>
+        <div class="project-grid">
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image" data-cursor-class="cursor-link">
+                    <a href="https://github.com/PhodzoW0l7/VanguardHSE" target="_blank" rel="noopener noreferrer">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/Vanguard.png" 
+                             alt="VanguardHSE - eCommerce microservices API platform">
+                    </a>
+                </div>
+                <div class="portfolio-item-details text-left">
+                    <h3 class="portfolio-item-headline">VanguardHSE · E‑commerce &amp; Microservices</h3>
+                    <div class="category-holder">
+                        <span class="category">ASP.NET Core · C# · REST APIs</span>
+                    </div>
+                    <div class="project-description">
+                        Full-featured shopping e‑commerce platform built with ASP.NET Core, integrating CRUD operations, 
+                        microservices architecture, multiple API gateways, and robust authentication. Implements complex 
+                        business logic, catalog management, cart/checkout flows, and order processing — all driven by 
+                        dozens of RESTful endpoints.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/VanguardHSE" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7?tab=repositories">
-              <img src="./assets/gijimata.png" alt="Project 2" />
-              <h3>Gijima Training Academy</h3>
-              <label
-                >Site of a Skills development is a strategic imperative at
-                Bidvest Protea Coin. It enables, amongst other things, superior
-                service delivery to clients, creates synergy between individual
-                performance, behaviour, company objectives and client
-                needs.</label
-              >
-            </a>
-          </div>
+            <!-- 2. TrailCast - Real-time weather navigation engine (featured on CV) -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7/TrailCast" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/trailcast.png" 
+                             alt="TrailCast - Geospatial weather routing">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">TrailCast · Weather‑adaptive Navigation</h3>
+                    <div class="category-holder">
+                        <span class="category">Java · Spring Boot · PostGIS · WebSockets</span>
+                    </div>
+                    <div class="project-description">
+                        Real‑time navigation engine that calculates dynamic routes for driving, off‑roading & hiking using 
+                        live meteorological data. Spring Boot backend with PostGIS geospatial queries, WebSocket alerts 
+                        for flood zones, and React frontend with Mapbox integration.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/TrailCast" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7?tab=repositories">
-              <img src="./assets/loginandregister.jpg" alt="Project 3" />
-              <h3>Login and Register</h3>
-              <label
-                >The Login and Registration Platform is a web application
-                designed to provide secure user authentication and management.
-                Built with ASP.NET for the backend and Angular for the
-                frontend.</label
-              >
-            </a>
-          </div>
+            <!-- 3. AI Guardrail System (FNB Innovation Winner) - highlighted -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7?tab=repositories" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/guardrail.png" 
+                             alt="AI Guardrail System - Prompt Injection Detection">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">AI Guardrail System · Prompt Injection Firewall</h3>
+                    <div class="category-holder">
+                        <span class="category">n8n · Python · API Security</span>
+                    </div>
+                    <div class="project-description">
+                        🏆 FNB internal AI Innovation competition winner. Multi‑stage automated pipeline that detects and 
+                        neutralizes prompt injection attacks using intelligent firewalls, n8n workflows, and custom API 
+                        integrations — robust LLM security layer.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/PromptHub-main" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7/To-do-list">
-              <img src="./assets/todolist.jpg" alt="Project 4" />
-              <h3>To do list</h3>
-              <label
-                >The To-Do List Application is a simple yet powerful task
-                management tool built with Node.js. This application allows
-                users to create, edit, and delete tasks effortlessly.</label
-              >
-            </a>
-          </div>
+            <!-- 4. EventsWebsite (fresh full-stack showcase) -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7/EventsWebsite" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/eventswebsite.png" 
+                             alt="Events platform with microservice style">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">EventsWebsite · Event Management Hub</h3>
+                    <div class="category-holder">
+                        <span class="category">C# · ASP.NET Web API · Angular · SQL</span>
+                    </div>
+                    <div class="project-description">
+                        Modern event discovery & management platform integrating CRUD, RSVP flows, and role-based dashboards. 
+                        Built with multiple API endpoints, JWT authentication, and responsive frontend — demonstrating 
+                        microservices readiness and clean architecture.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/EventsWebsite" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="project-box">
-            <a
-              href="https://github.com/PhodzoW0l7/Portfolio/tree/development/chatbot"
-            >
-              <img src="./assets/chatbot.jpg" alt="Project 5" />
-              <h3>Chatbot</h3>
-              <label
-                >The Personal Portfolio Chatbot is an interactive feature
-                integrated into my personal website, designed to provide
-                visitors with instant information about me and my work.</label
-              >
-            </a>
-          </div>
+            <!-- 5. Listings CRUD App (ASP.NET Core MVC) - fresh update -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7?tab=repositories" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/CRUD.png" 
+                             alt="CRUD listings application">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">Listings CRUD · Advanced Marketplace</h3>
+                    <div class="category-holder">
+                        <span class="category">C# · EF Core · SQL Server · Bootstrap</span>
+                    </div>
+                    <div class="project-description">
+                        Full‑stack web app with role‑based access (public browse / admin CRUD). Robust ASP.NET Core MVC 
+                        backend, Entity Framework Core for data persistence, advanced search filters and pagination — 
+                        enterprise‑grade listing engine.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7?tab=repositories" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="project-box">
-            <a href="https://github.com/PhodzoW0l7/Kidslearningplatform">
-              <img src="./assets/klp.png" alt="Project 6" />
-              <h3>Kids Learning Platform</h3>
-              <label
-                >The Kids Learning Platform is an engaging and interactive
-                online educational tool designed specifically for children. This
-                platform allows kids to log in or sign up to explore a variety
-                of subjects.</label
-              >
-            </a>
+            <!-- 6. Navcrowd (south african listing platform - maintain) -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7?tab=repositories" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/navcrowd.jpg" 
+                             alt="Navcrowd - South African independent listing">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">Navcrowd · SA Local Business Listings</h3>
+                    <div class="category-holder">
+                        <span class="category">React · Node.js · MongoDB · JWT</span>
+                    </div>
+                    <div class="project-description">
+                        First independent listing platform in South Africa focused on local businesses, services & events. 
+                        Provides rich search, user submissions, and community-driven content. Built with MERN stack and 
+                        high-performance API layer.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/Navcrowd" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Gijima Training Academy (professional training portal) -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7?tab=repositories" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/gijimata.png" 
+                             alt="Gijima skills development site">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">Gijima Training Academy · EdTech Portal</h3>
+                    <div class="category-holder">
+                        <span class="category">PHP · Laravel · MySQL · Bootstrap</span>
+                    </div>
+                    <div class="project-description">
+                        Skills development platform for corporate training, employee upskilling and performance synergy. 
+                        Interactive dashboards, course management, and progress tracking — solving real business needs.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/GijimaTrainingAcademy" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Kids Learning Platform (interactive educational tool) -->
+            <div class="portfolio-item portfolio-grid-type-1 boxed hover-scale-img hover-color-overlay">
+                <div class="portfolio-item-image">
+                    <a href="https://github.com/PhodzoW0l7/Kidslearningplatform" target="_blank">
+                        <img decoding="async" class="lazyloaded" 
+                             src="/assets/kidslearn.jpg" 
+                             alt="Kids Learning Platform - gamified">
+                    </a>
+                </div>
+                <div class="portfolio-item-details">
+                    <h3 class="portfolio-item-headline">Kids Learning Platform · Gamified Education</h3>
+                    <div class="category-holder">
+                        <span class="category">Flutter · Node.js · Firebase · SQLite</span>
+                    </div>
+                    <div class="project-description">
+                        Engaging child‑friendly platform with signup/login, subject exploration, interactive quizzes, 
+                        and progress tracking. Built with responsive design and safe content delivery — both web & mobile 
+                        friendly.
+                    </div>
+                    <div class="show-project">
+                        <div class="show-project-link">
+                            <a href="https://github.com/PhodzoW0l7/Kidslearningplatform" target="_blank"> Explore project </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section" id="certifications">
+  <div class="top-header">
+    <h1>Certifications</h1>
+    <br />
+    <span>Professional credentials and continuous learning.</span>
+  </div>
+
+  <div class="certs-wrapper">
+    <!-- Featured / Most Important Certifications -->
+    <div class="featured-certs">
+      <!-- Oracle Java Foundations -->
+      <div class="featured-cert-card">
+        <div class="featured-cert-header">
+          <div class="featured-cert-icon oracle">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" width="28" alt="Oracle">
+          </div>
+          <div class="featured-cert-title">
+            <h3>Java Foundations</h3>
+            <span class="featured-cert-issuer">Oracle</span>
           </div>
         </div>
-      </section>
+        <div class="featured-cert-date">
+          <i class="fa-regular fa-calendar"></i> Issued Jul 2025
+        </div>
+        <div class="featured-cert-skills">
+          <span>OOP</span>
+          <span>RESTful WebServices</span>
+        </div>
+      </div>
 
-      <section class="section" id="certifications">
-        <div class="top-header">
-          <h1>Certifications</h1>
-        </div>
-        <div class="certification-container">
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/052caa78-d0c8-48c8-a18b-bff7e16326a5"
-            >
-              <img
-                src="./assets/I2CS__1_.png"
-                alt="Cisco Introduction to Cybersecurity"
-              />
-              <h3>Cisco: Introduction to Cybersecurity</h3>
-              <label
-                >Cisco verifies the earner of this badge successfully completed
-                the Introduction to Cybersecurity course.</label
-              >
-            </a>
+      <!-- Microsoft Azure Fundamentals -->
+      <div class="featured-cert-card">
+        <div class="featured-cert-header">
+          <div class="featured-cert-icon microsoft">
+            <i class="fa-brands fa-microsoft"></i>
           </div>
-          <div class="certification-box">
-            <a
-              href="https://learn.microsoft.com/en-us/users/phodzonagana-8685/credentials/7238b6fa4531f0a0"
-            >
-              <img
-                src="./assets/microsoft-certified-fundamentals-badge.png"
-                alt="Microsoft Az-900"
-              />
-              <h3>Microsoft Security: AZ-900</h3>
-              <label
-                >Microsoft Certified: Security, Compliance, and Identity
-                Fundamentals</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.coursera.org/account/accomplishments/verify/XAC0C198L2PA?utm_source=ios&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
-            >
-              <img
-                src="./assets/CERTIFICATE_LANDING_PAGE~XAC0C198L2PA.jpeg"
-                alt="Hands-on Introduction to Linux Commands and Shell Scripting"
-              />
-              <h3>
-                Hands-on Introduction to Linux Commands and Shell Scripting
-              </h3>
-              <label
-                >Hands-on Introduction to Linux Commands and Shell
-                Scripting</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/f17d6663-879e-41e5-ab04-71bd35660c3a"
-            >
-              <img src="./assets/intro to threat.png" alt="Fortinet 1" />
-              <h3>Fortinet: Introduction into Threat Landscape</h3>
-              <label
-                >The Introduction to the Threat Landscape 2.0 badge recognizes a
-                fundamental understanding of the cyber threat landscape.</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/00784969-404d-4ec3-b6b8-f9428e848dc4"
-            >
-              <img src="./assets/getting started v2.0.png" alt="Fortinet 2" />
-              <h3>Fortinet: Getting Started in Cybersecurity 2.0</h3>
-              <label
-                >The Getting Started with Cybersecurity 2.0 badge recognizes a
-                basic understanding of cybersecurity.</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/801bc97a-7ada-4cc0-b184-6b39c73438dc"
-            >
-              <img src="./assets/fundamentals fortinet.png" alt="Fortinet 3" />
-              <h3>Fortinet Certified Fundamentals Cybersecurity</h3>
-              <label
-                >The Fortinet Certified Fundamentals in Cybersecurity
-                certification validates mastery of entry-level cybersecurity
-                skills.</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/2e9cfad5-44a7-4bf0-b22e-b3d04c6f637b"
-            >
-              <img src="./assets/isc2 candidate.png" alt="ISC2" />
-              <h3>ISC2 Cybersecurity Candidate</h3>
-              <label
-                >ISC2 Candidates are individuals pursuing or considering a
-                cybersecurity certification.</label
-              >
-            </a>
-          </div>
-          <div class="certification-box">
-            <a
-              href="https://www.credly.com/badges/2e9cfad5-44a7-4bf0-b22e-b3d04c6f637b"
-            >
-              <img src="./assets/icons8-amazon-96.png" alt="ISC2" />
-              <h3>Introduction to Software Development</h3>
-              <label>Introduction to software development in Java</label>
-            </a>
+          <div class="featured-cert-title">
+            <h3>Azure Fundamentals (AZ-900)</h3>
+            <span class="featured-cert-issuer">Microsoft</span>
           </div>
         </div>
-      </section>
+        <div class="featured-cert-date">
+          <i class="fa-regular fa-calendar"></i> Issued Mar 2024
+        </div>
+        <div class="featured-cert-skills">
+          <span>Cloud Computing</span>
+          <span>Azure Services</span>
+        </div>
+      </div>
+
+      <!-- Full Stack Web Development - Amazon -->
+      <div class="featured-cert-card">
+        <div class="featured-cert-header">
+          <div class="featured-cert-icon amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="featured-cert-title">
+            <h3>Full Stack Web Development</h3>
+            <span class="featured-cert-issuer">Amazon</span>
+          </div>
+        </div>
+        <div class="featured-cert-date">
+          <i class="fa-regular fa-calendar"></i> Issued Mar 2025
+        </div>
+        <div class="featured-cert-skills">
+          <span>Frontend</span>
+          <span>Backend</span>
+          <span>Databases</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grouped Certifications -->
+    <!-- Cloud & Security Group -->
+    <div class="certs-group">
+      <div class="certs-group-title">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>Cloud & Security</h3>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-item">
+          <div class="cert-icon-small google">
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Google Cloud Innovators</div>
+            <div class="cert-meta"><span class="issuer">Google</span> • Sep 2024</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small microsoft">
+            <i class="fa-brands fa-microsoft"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Security, Compliance & Identity (SC-900)</div>
+            <div class="cert-meta"><span class="issuer">Microsoft</span> • Mar 2024</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small fortinet">
+            <i class="fa-solid fa-user-lock"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Fortinet Certified Fundamentals Cybersecurity</div>
+            <div class="cert-meta"><span class="issuer">Fortinet</span> • Feb 2024</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small cisco">
+          <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Introduction to Cybersecurity</div>
+            <div class="cert-meta"><span class="issuer">Cisco</span> • Mar 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Development & Programming Group -->
+    <div class="certs-group">
+      <div class="certs-group-title">
+        <i class="fa-solid fa-code"></i>
+        <h3>Development & Programming</h3>
+      </div>
+      <div class="certs-grid" id="devCerts">
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Generative AI in Software Development</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Mar 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Database Management with Java and SQL</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Mar 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Application Development</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Mar 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Data Structures and Algorithms</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Mar 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Programming with Java</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Mar 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small amazon">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Introduction to Software Development</div>
+            <div class="cert-meta"><span class="issuer">Amazon</span> • Feb 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linux & Tools Group (Collapsible - can show more) -->
+      <div class="certs-group">
+      <div class="certs-group-title">
+        <i class="fa-brands fa-linux"></i>
+        <h3>Linux & Development Tools</h3>
+      </div>
+      <div class="certs-grid" id="toolsCerts">
+        <div class="cert-item">
+          <div class="cert-icon-small packt">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">JUnit and Mockito Unit Testing for Java Developers</div>
+            <div class="cert-meta"><span class="issuer">Packt</span> • Feb 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small ibm">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Hands-on Introduction to Linux Commands & Shell Scripting</div>
+            <div class="cert-meta"><span class="issuer">IBM</span> • Jan 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon-small coursera">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="cert-info">
+            <div class="cert-name">Linux Commands & Shell Scripting Essentials V2</div>
+            <div class="cert-meta"><span class="issuer">Coursera</span> • Jan 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Certifications (Collapsible - hidden initially) -->
+    <div id="moreCerts" class="certs-collapsible">
+      <div class="certs-group">
+        <div class="certs-group-title">
+          <i class="fa-solid fa-shield"></i>
+          <h3>Cybersecurity & Professional</h3>
+        </div>
+        <div class="certs-grid">
+          <div class="cert-item">
+            <div class="cert-icon-small coursera">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="cert-info">
+              <div class="cert-name">Junior Software Developer</div>
+              <div class="cert-meta"><span class="issuer">Coursera</span> • Mar 2025</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon-small isc2">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="cert-info">
+              <div class="cert-name">ISC2 Candidate</div>
+              <div class="cert-meta"><span class="issuer">ISC2</span> • Jan 2024</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon-small fortinet">
+              <i class="fa-solid fa-user-lock"></i>
+            </div>
+            <div class="cert-info">
+              <div class="cert-name">Getting Started in Cybersecurity 2.0</div>
+              <div class="cert-meta"><span class="issuer">Fortinet</span> • Feb 2024</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon-small fortinet">
+              <i class="fa-solid fa-user-lock"></i>
+            </div>
+            <div class="cert-info">
+              <div class="cert-name">Introduction to the Threat Landscape 2.0</div>
+              <div class="cert-meta"><span class="issuer">Fortinet</span> • Dec 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show More / Show Less Button -->
+    <button class="show-more-btn" id="showMoreCertsBtn">
+      <i class="fa-solid fa-chevron-down"></i> Show All Certifications
+      <span id="hiddenCount"></span>
+    </button>
+  </div>
+</section>
 
 <section class="section" id="contact">
   <div class="top-header">
@@ -666,7 +965,7 @@
         </div>
         <div>
           <p class="contact-card-label">LinkedIn</p>
-          <a href="https://linkedin.com/in/phodzo-nagana" target="_blank" class="contact-card-value">
+          <a href="https://www.linkedin.com/in/phodzo-nagana-7067a1263/" target="_blank" class="contact-card-value">
             Phodzo Nagana
           </a>
         </div>
