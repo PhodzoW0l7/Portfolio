@@ -132,6 +132,12 @@ body.dark-mode .skills-category-header h3 {
 body.dark-mode .featured-cert-title h3 {
     color: rgb(235, 235, 245); /* Clean off-white that matches your other certificate titles */
 }
+body.dark-mode .skill-item span {
+    color: rgb(235, 235, 245);
+}
+body.dark-mode .certs-group-title h3 {
+    color: rgb(235, 235, 245);
+}
 
 
 * {
