@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --body-color: rgb(250, 250, 250);
+  --body-color: rgb(255, 255, 255);
+  --text-color-main: rgb(0, 0, 0);
   --color-white: rgb(255, 255, 255);
   --text-color-second: rgb(105, 105, 105);
   --text-color-third: rgb(102, 102, 102);
@@ -9,6 +10,119 @@
   --second-color: rgb(0, 201, 255);
   --third-color: rgb(22, 109, 190);
 }
+
+body.dark-mode {
+  --body-color: rgb(49, 54, 61); 
+  --text-color-main: rgb(255, 255, 255);
+  --text-color-second: rgb(180, 180, 180);
+  --text-color-third: rgb(200, 200, 200);
+  /* Optional: Swaps hover color to a lighter shade in dark mode if needed */
+  --third-color: rgb(40, 140, 230); 
+}
+
+body {
+  background: var(--body-color);
+  background-size: cover;
+  color: var(--text-color-main); /* FIXED: Swapped from --body-color so text is visible */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* ==========================================
+   DARK MODE COMPONENT OVERRIDES
+   ========================================== */
+body.dark-mode #intro {
+    background-color: rgb(48, 48, 48);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 12px;
+}
+
+body.dark-mode .exp-card-right {
+    background: rgb(45, 45, 45);
+    border-color: rgba(110, 90, 222, 0.25); /* Subtle glowing accent border */
+}
+
+body.dark-mode .skills-category {
+    background: rgb(45, 45, 45);
+    border-color: rgb(58, 58, 58);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 20px;
+}
+
+body.dark-mode .portfolio-item {
+    background: rgb(45, 45, 45);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 30px;
+}
+
+body.dark-mode .cert-item {
+    background: rgb(45, 45, 45);
+    border-color: rgba(90, 121, 222, 0.2);
+}
+
+body.dark-mode .featured-cert-card {
+    background: linear-gradient(135deg, rgb(48, 48, 48) 0%, rgb(42, 42, 50) 100%);
+    border-color: rgba(90, 136, 222, 0.25);
+}
+
+body.dark-mode .contact-right {
+    background: rgb(45, 45, 45);
+    border-color: var(--third-color); /* Subtle cyan boundary */
+}
+
+body.dark-mode .contact-card {
+    background: rgb(52, 52, 52); /* Elevated card surface */
+}
+
+body.dark-mode .footer {
+    background: rgb(28, 28, 28); /* Darker tone for page depth layout */
+}
+body.dark-mode .portfolio-item-details {
+    background: rgb(45, 45, 45); /* Matches the outer portfolio-item container */
+}
+
+body.dark-mode .contact-field input, 
+body.dark-mode .contact-field textarea {
+    color: rgb(240, 240, 240); /* Light text color for clear readability */
+    background: rgb(55, 55, 55); /* Darker input field background */
+    border-color: rgba(255, 255, 255, 0.15); /* Soft border that stands out in the dark */
+}
+
+/* Optional: Enhances focus visibility for keyboard and typing navigation */
+body.dark-mode .contact-field input:focus, 
+body.dark-mode .contact-field textarea:focus {
+    border-color: var(--first-color); /* Uses your purple brand color on focus */
+}
+/* Container Backgrounds */
+body.dark-mode .about-intro-stats {
+    background: rgb(45, 45, 45);
+    border-color: rgba(90, 143, 222, 0.25);
+}
+
+body.dark-mode .skill-item {
+    background: rgb(52, 52, 52); /* Distinct elevated background tile */
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Category Badge Labels */
+body.dark-mode .category {
+    background: rgb(34, 51, 66); /* Dark navy background contrast */
+    color: rgb(150, 199, 255);   /* Bright legible text */
+}
+
+/* Titles and Typography Text Elements */
+body.dark-mode .top-header h1 {
+    color: rgb(240, 245, 250);   /* Near-white header contrast */
+}
+
+body.dark-mode .project-description {
+    color: rgb(200, 210, 220);   /* Softer grey reading layout text */
+}
+
+body.dark-mode .cert-name {
+    color: rgb(235, 235, 245);
+}
+
+body.dark-mode .contact-card-value {
+    color: rgb(235, 235, 245);
+}
+
 
 * {
   margin: 0;
@@ -134,12 +248,6 @@ nav.scrolled .btn {
 
 i {
   font-size: 16px;
-}
-
-body {
-  background: var(--body-color) url(../assets/013\ Heavy\ Rain.png) no-repeat
-    center center fixed;
-  background-size: cover;
 }
 
 .container {
@@ -1367,7 +1475,7 @@ nav.scrolled .btn {
 .contact-field label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-color-second, #6c6c8a);
+  color: var(--text-color-second, #6c788a);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1381,7 +1489,7 @@ nav.scrolled .btn {
   border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
-  color: #1a1a2e;
+  color: var(--third-color);
   outline: none;
   transition: all 0.2s ease;
   resize: vertical;
@@ -1533,13 +1641,6 @@ nav.scrolled .btn {
   margin-top: 10px;
 }
 /* Chatbot icon styling */
-/* Root Variables */
-:root {
-  --body-bg: rgb(250, 250, 250);
-  --message-bg: rgb(255, 255, 255);
-  --left-message-bg: rgb(22, 109, 190);
-  --right-message-bg: rgb(102, 102, 102);
-}
 
 /* Chatbot Wrapper */
 #chatbot-wrapper {

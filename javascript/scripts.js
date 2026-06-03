@@ -169,3 +169,8 @@ document.addEventListener("click", function(event) {
     }
   });
   
+
+  //---DARK--MODE--FEATURE----
+document.getElementById('home-btn').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
