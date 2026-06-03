@@ -122,6 +122,16 @@ body.dark-mode .cert-name {
 body.dark-mode .contact-card-value {
     color: rgb(235, 235, 245);
 }
+body.dark-mode .exp-role {
+    color: rgb(235, 235, 245); /* High-contrast off-white to match your certificates */
+}
+
+body.dark-mode .skills-category-header h3 {
+    color: rgb(240, 245, 250); /* Bright, clean text color for dark backgrounds */
+}
+body.dark-mode .featured-cert-title h3 {
+    color: rgb(235, 235, 245); /* Clean off-white that matches your other certificate titles */
+}
 
 
 * {
@@ -1678,7 +1688,7 @@ nav.scrolled .btn {
   max-height: 400px; /* Fix the height */
   margin: 2px 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: rgb(11, 95, 221);
   border-radius: 10px;
   overflow: hidden;
 }
