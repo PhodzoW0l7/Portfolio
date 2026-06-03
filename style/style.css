@@ -336,7 +336,7 @@ nav.scrolled .btn {
 }
 
 .featured-text-btn > .blue-btn:hover {
-  background: var(--first-color-hover);
+  background: rgb(12, 63, 110);
 }
 
 .social-icons {
