@@ -45,7 +45,6 @@ div.addEventListener("click", () => {
 var typingEffect = new Typed(".typed-text", {
   strings: [
     "Full Stack Developer",
-    "Software Engineer",
     "Cloud Security Analyst",
   ],
   loop: true,
