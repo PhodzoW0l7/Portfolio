@@ -138,6 +138,9 @@ body.dark-mode .skill-item span {
 body.dark-mode .certs-group-title h3 {
     color: rgb(235, 235, 245);
 }
+body.dark-mode .nav-logo span {
+    color: rgb(235, 235, 245); /* Light accent for the logo in dark mode */
+}
 
 
 * {
@@ -209,7 +212,7 @@ nav.scrolled .btn {
   top: -15px;
   right: -20px;
   font-size: 5em;
-  color: var(--third-color);
+  color: rgb(11, 81, 148);
 }
 
 .nav-menu,
